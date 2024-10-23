@@ -204,7 +204,7 @@ for (i in 1:length(new_q)) {
   )
 
   addStyle(wb, "Crosstabs",
-    ch2,
+    chl,
     rows = r,
     cols = 2
   )

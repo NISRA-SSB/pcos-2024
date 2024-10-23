@@ -98,7 +98,7 @@ NISRA is an Agency within the Department of Finance and provides statistical ser
  
 
 :::{custom-style="numbered_style_2"}
-Official statistics are statistical outputs produced by Government departments and agencies, the Office for National Statistics, and by other Crown bodies. Official statistics are fundamental to good government, to the delivery of public services and to decision-making in all sectors of society. National Statistics are a subset of official statistics.
+Official statistics are statistical outputs produced by Government departments and agencies, the Office for National Statistics, and by other Crown bodies. Official statistics are fundamental to good government, to the delivery of public services and to decision-making in all sectors of society. Accredited Official Statistics are a subset of official statistics.
 :::
  
 

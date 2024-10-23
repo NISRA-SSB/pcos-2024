@@ -90,7 +90,7 @@ In 2008 the Statistics Authority was set up as a non-Ministerial government depa
 :::
 
 :::{custom-style="numbered_point"}
-Official statistics (which include National Statistics) are statistical outputs produced by Government departments and agencies, the Office for National Statistics, and by other Crown bodies.  Official statistics are fundamental to good government, to the delivery of public services and to decision-making in all sectors of society. The majority of Northern Ireland official statistics are produced by NISRA staff. NISRA branches can be found within all NICS Departments and many Arm’s Length Bodies.
+Official statistics (which include Accredited Official Statistics) are statistical outputs produced by Government departments and agencies, the Office for National Statistics, and by other Crown bodies.  Official statistics are fundamental to good government, to the delivery of public services and to decision-making in all sectors of society. The majority of Northern Ireland official statistics are produced by NISRA staff. NISRA branches can be found within all NICS Departments and many Arm’s Length Bodies.
 :::
 
 :::{custom-style="numbered_point"}

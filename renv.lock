@@ -1103,14 +1103,9 @@
     "odsconvertr": {
       "Package": "odsconvertr",
       "Version": "0.2.2",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "department-for-transport",
-      "RemoteRepo": "odsconvertr",
-      "RemoteRef": "main",
-      "RemoteSha": "d81cecbb7267f63c94193ad615f1cc5fb22fed4a",
-      "Hash": "5368519248093044aa3fb6d2fd4a01b9"
+      "Source": "Repository",
+      "Repository": "internal_repo",
+      "Hash": "9fc859892cd67ca0b988187afbac7d17"
     },
     "officedown": {
       "Package": "officedown",
@@ -1452,18 +1447,13 @@
     "readspss": {
       "Package": "readspss",
       "Version": "0.17.1",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "JanMarvin",
-      "RemoteRepo": "readspss",
-      "RemoteRef": "main",
-      "RemoteSha": "3ba9cc27aba964df7eadbcb51419d0cf307b2396",
+      "Source": "Repository",
+      "Repository": "internal_repo",
       "Requirements": [
         "BH",
         "Rcpp"
       ],
-      "Hash": "d0b818966e147739df9218e3d78adf71"
+      "Hash": "d96ca15ca2b6f01e838301854ee9e888"
     },
     "readxl": {
       "Package": "readxl",

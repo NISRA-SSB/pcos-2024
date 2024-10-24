@@ -92,7 +92,7 @@ aware_trust_chart_2 <- ggplot(trust_df, aes(fill = Category, x = Percentage, y =
     axis.title.y = element_blank(),
     text = element_text(size = 15),
     legend.key = element_blank(),
-    legend.text = element_text(size = 8),
+    legend.text = element_text(size = 10),
     legend.title = element_blank(),
     plot.title = element_text(
       hjust = 1,
@@ -300,11 +300,11 @@ aware_trust_chart_5 <- ggplot(
     label = Percentage
   )
 ) +
-  geom_bar(position = "stack", width = 0.6, stat = "identity", colour = NA, size = 0, key_glyph = f_draw_square) +
+  geom_bar(position = "stack", width = 0.5, stat = "identity", colour = NA, size = 0, key_glyph = f_draw_square) +
   scale_fill_manual(values = alpha(c("#888A87", "#cdda28", "#00205b"))) +
   labs(title = bquote("Trust in" ~ bold("NISRA") ~ "compared to other institutions")) +
   theme(
-    text = element_text(size = 18),
+    text = element_text(size = 14),
     legend.position = "top",
     legend.justification = "center",
     axis.title.y = element_blank(),
@@ -344,7 +344,7 @@ aware_trust_chart_5 <- ggplot(
 
 aware_trust_chart_5
 
-save_plot(paste0(here(), "/outputs/infographics/Overview5.png"), fig = aware_trust_chart_5, width = 16, height = 8)
+save_plot(paste0(here(), "/outputs/infographics/Overview5.png"), fig = aware_trust_chart_5, width = 16, height = 7)
 
 overview5alt <- paste0(
   "Stacked bar chart comparing Trust in NISRA to other institutions. Trust in NISRA was ",
@@ -399,11 +399,10 @@ trust_chart_1 <- ggplot(trust_info_data1, aes(x = 2, y = prop, fill = class)) +
   coord_polar(theta = "y", start = 0) +
   scale_fill_manual(values = donut_cols) +
   theme_void() +
-  coord_polar(theta = "y") +
-  xlim(-.2, 3) +
+  xlim(-.2, 3.4) +
   theme(legend.position = "none") +
   annotate("text",
-    x = -0.2, y = 48, size = 9.5,
+    x = -0.2, y = 48, size = 8,
     label = paste0("Respondents’ trust\nin NISRA statistics\n", current_year),
     color = "#747474"
   ) +
@@ -411,7 +410,7 @@ trust_chart_1 <- ggplot(trust_info_data1, aes(x = 2, y = prop, fill = class)) +
     aes(
       label = label,
       y = c(10, 86, 94),
-      x = c(3, 3, 3),
+      x = c(3.4, 3.4, 3.4),
       color = label
     ),
     size = 9,
@@ -848,9 +847,9 @@ for (i in 1:nrow(awareness_info_data1)) {
     bubble_chart <- bubble_chart +
       inset_element(
         p = connecting_line,
-        left = left - 0.015,
+        left = left - 0.01,
         bottom = 0.5,
-        right = left + 0.015,
+        right = left + 0.01,
         top = 0.5
       )
   }
@@ -1022,7 +1021,7 @@ pub_awareness_chart_3 <- ggplot(
       size = 24
     ),
     legend.position = "top",
-    legend.text = element_text(size = 14),
+    legend.text = element_text(size = 16),
     legend.title = element_blank(),
     axis.title.y = element_blank(),
     panel.grid.major = element_blank(),

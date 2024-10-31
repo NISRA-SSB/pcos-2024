@@ -204,7 +204,7 @@ for (i in 1:length(new_q)) {
   )
 
   addStyle(wb, "Crosstabs",
-    chl,
+    ch2,
     rows = r,
     cols = 2
   )
@@ -221,9 +221,15 @@ for (i in 1:length(new_q)) {
 
   addStyle(wb, "Crosstabs",
     rab,
-    rows = r:(r + nrow(crosstab)),
+    rows = (r + 1):(r + nrow(crosstab)),
     cols = 1
   )
+  
+  addStyle(wb, "Crosstabs",
+           chl,
+           rows = r,
+           cols = 1
+           )
 
   r <- r + nrow(crosstab) + 2
 }

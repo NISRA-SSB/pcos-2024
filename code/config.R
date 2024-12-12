@@ -18,18 +18,18 @@ bilingual <- TRUE
 # Location of data folder - see sourced script
 source(paste0(here(), "/code/path_to_data.R"))
 
-data_filename <- "2223_PCOS_FINAL_WEIGHTED_PASSWORDED.sav"
-password <- "CHS2223"
+data_filename <- "CHS2324_PCOS_FINAL_DATASET_PASSWORDED.sav"
+password <- "CHS2324"
 
-ons_filename <- "ONS PCOS Data - 2021.xlsx"
+ons_filename <- "ONS PCOS Data - 2023.xlsx"
 
 ##### YEAR OF DATA & REPORT TITLE  #####
 # Specify the current year your data is for.
 # Set the report title and subtitle if required
 # THESE SHOULD BE UPDATED FOR EACH NEW PUBLICATION
 
-current_year <- 2022
-ons_year <- 2021
+current_year <- 2023
+ons_year <- 2023
 
 survey_start_mth <- "September"
 survey_end_mth <- "December"
@@ -54,7 +54,7 @@ statistic_type <- "os" # options: as  (Accredited Official Statistics),
 
 # Set the report publication data and next publication data if required
 
-pub_date <- "25 October 2023"
+pub_date <- "10 January 2024"
 next_pub_date <- "10 June 2025"
 
 ##### CONTACT DETAILS #####

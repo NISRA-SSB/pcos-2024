@@ -16,7 +16,7 @@ bilingual <- TRUE
 #  bilingual - can be TRUE or FALSE - Sets language for NISRA Logo
 
 # Location of data folder - see sourced script
-source(paste0(here(), "/code/path_to_data.R"))
+source(paste0(here::here(), "/code/path_to_data.R"))
 
 data_filename <- "CHS2324_PCOS_FINAL_DATASET_PASSWORDED.sav"
 password <- "CHS2324"

@@ -1,4 +1,5 @@
 # Prepare infographic data frames here. Script is automatically sourced in infographic charts.R
+# Before running infographic charts.R, fix years in ONS v NISRA charts here - Trust chart 4 and Awareness chart 3
 
 library(here)
 source(paste0(here(), "/code/html_publication/data_prep.R"))
@@ -139,7 +140,10 @@ trust_info_data3 <- trust_info_data3 %>%
 trust_info_data3$Year <- as.character(trust_info_data3$Year)
 line_chart_df <- trust_info_data3
 
-# Chart 4
+## Chart 4 ####
+
+# under filter V1, list any years with ONS data but without NISRA data (2018)
+# under filter Year, list any years with NISRA data but without ONS data (2019, 2020, 2022) - do not include current year
 
 trust_info_data4 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_4d_data.RDS")) %>%
   filter(Response == "Yes") %>%
@@ -155,7 +159,7 @@ trust_info_data4 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_
   tail(4) %>%
   bind_rows(trust_info_data2 %>%
     as.data.frame() %>%
-    filter(!Year %in% 2019:2020) %>%
+    filter((Year != 2019) & (Year != 2020) & (Year != 2022)) %>%
     mutate(
       Organisation = "NISRA",
       Year = as.character((Year))
@@ -177,8 +181,8 @@ if (current_year != ons_year) {
 
 
 
-# Awareness Infographic
-# Chart 2
+# Awareness Infographic ####
+## Chart 2 ####
 
 new_info_names <- c("Category", "Year", "Percentage")
 
@@ -241,7 +245,7 @@ aware_nisra_z <- f_trend_z_scores(aware_nisra_trend, "Yes") %>%
 
 
 
-# Chart 3
+## Chart 3 ####
 awareness_info_data2 <- readRDS(paste0(data_folder, "Trend/", current_year, "/aware_nisra_ons_data.RDS"))
 awareness_info_data2$year <- as.character(awareness_info_data2$year)
 awareness_info_data2 <- subset(awareness_info_data2, awareness_info_data2$year == "2016" |
@@ -252,7 +256,7 @@ awareness_info_data2 <- gather(awareness_info_data2, Group, Percentage, -`year`)
 awareness_info_data2$Percentage <- round_half_up(awareness_info_data2$Percentage)
 awareness_info_data2$Group <- toupper(awareness_info_data2$Group)
 
-# Chart 4
+## Chart 4 ####
 awareness_info_data3 <- gather(aware_stats_data, Answer, Percentage, -`output`) %>%
   rename(Group = output) %>%
   mutate(

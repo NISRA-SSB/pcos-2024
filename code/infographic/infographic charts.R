@@ -1,4 +1,6 @@
 # Select all and Ctrl + Enter to produce infographics
+# Before doing so fix years in ONS v NISRA charts in infographic prep. R 
+# Trust chart 4 and Awareness chart 3
 
 library(here)
 source(paste0(here(), "/code/infographic/infographic prep.R"))
@@ -567,6 +569,22 @@ trust3alt <- paste0("Bar chart showing that the belief that NISRA statistics are
 
 ## Trust in statistics compared to ONS ####
 
+data_current <- readRDS(paste0(data_folder, "Final/PCOS ", current_year, " Final Dataset.RDS"))
+trust_stats_nisra_ons <- f_nisra_ons(
+  var = "TrustNISRAstats2",
+  val_1 = "Trust a great deal/Tend to trust",
+  val_2 = "Tend to distrust/Distrust greatly"
+)
+nisra_ons_z = trust_stats_nisra_ons[1,4]
+
+nisra_ons_sig <- if (nisra_ons_z < qnorm(0.975) * -1) {
+  "significantly lower"
+} else if (nisra_ons_z > qnorm(0.975)) {
+  "significantly higher"
+} else {
+  "similar"
+}
+
 chart_4_perc <- paste0(trust_info_data4$Percentage[trust_info_data4$Year == current_year], "%")
 
 trust_chart_4 <- ggplot(trust_info_data4, aes(x = Year, y = Percentage, group = factor(Organisation))) +
@@ -578,7 +596,10 @@ trust_chart_4 <- ggplot(trust_info_data4, aes(x = Year, y = Percentage, group = 
     aes(fill = factor(Organisation)),
     position = position_dodge(width = 0.7)
   ) +
-  ggtitle(label = bquote("Trust in" ~ bold("NISRA") ~ "statistics is" ~ bold("similar") ~ "to trust in" ~ bold("ONS") ~ "statistics at" ~ bold(.(chart_4_perc)))) +
+  labs(
+    title = bquote("Trust in" ~ bold("NISRA") ~ "statistics is" ~ bold(.(nisra_ons_sig)) ~ .(if (nisra_ons_sig == "similar") "to" else "than")),
+    subtitle = bquote(~ "trust in" ~ bold("ONS") ~ "statistics") 
+  ) +
   scale_fill_manual(values = alpha(c("#00205b", "#5094dc"))) +
   theme(
     axis.text.y = element_blank(),
@@ -592,7 +613,11 @@ trust_chart_4 <- ggplot(trust_info_data4, aes(x = Year, y = Percentage, group = 
     plot.title = element_text(
       hjust = 0.5,
       size = 29,
-      margin = margin(0, 0, 30, 0),
+      color = "#747474"
+    ),
+    plot.subtitle = element_text(
+      hjust = 0.5,
+      size = 29,
       color = "#747474"
     ),
     panel.grid.major = element_blank(),

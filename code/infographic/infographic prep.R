@@ -251,7 +251,7 @@ awareness_info_data2$year <- as.character(awareness_info_data2$year)
 awareness_info_data2 <- subset(awareness_info_data2, awareness_info_data2$year == "2016" |
   awareness_info_data2$year == "2018" |
   awareness_info_data2$year == "2021" |
-  awareness_info_data2$year == "2022")
+  awareness_info_data2$year == "2023")
 awareness_info_data2 <- gather(awareness_info_data2, Group, Percentage, -`year`)
 awareness_info_data2$Percentage <- round_half_up(awareness_info_data2$Percentage)
 awareness_info_data2$Group <- toupper(awareness_info_data2$Group)

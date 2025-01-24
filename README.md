@@ -325,7 +325,7 @@ There are two outputs produced: the exploratory significance output and the fina
 
 UPDATE THE INPUT FILES (AS APPROPRIATE) BEFORE RUNNING
 
-This script will produce a list of Z Scores for a quick look at significance trends. Each questions appears in its own tab.
+This script will produce a list of Z Scores for a quick look at significance trends. Each question appears in its own tab.
 
 The years being compared can be changed by setting the `comparison_year` and `analysis_year` values at the top of the script.The `analysis_year` is currently set to `current_year` and the `comparison_year`is currently set to `current_year` - 1.
 
@@ -335,7 +335,7 @@ The main way to edit the inputs to this analysis is through the csv files and Ex
 
 *The time_series_vars excel file identifies the equivalent variables in previous years (for both the variables and covariates). For the code to run this MUST include columns for BOTH the `analysis_year` and the `comparison_year`.
 
-*The grouping .csv file lists the covariates, and categories of the covariates which should be compared for the `analysis_year` and with the `comparison_year`
+*The grouping .csv file lists the covariates, and categories of the covariates which should be compared within the `analysis_year`, and with the `comparison_year`
 
 #### [weighted_trend.R](code/significance_testing/final_output/weighted_trend.R)
 

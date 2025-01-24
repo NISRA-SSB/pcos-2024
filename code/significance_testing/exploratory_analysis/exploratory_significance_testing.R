@@ -11,8 +11,8 @@ time_series_vars <- readxl::read_xlsx(paste0(here(), "/code/significance_testing
   sheet = "var read across "
 )
 
-analysis_year <- 2022
-comparison_year <- 2021
+analysis_year <- current_year
+comparison_year <- current_year - 1
 
 vars$data_last <- c()
 

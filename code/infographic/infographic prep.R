@@ -209,11 +209,12 @@ awareness_info_data1 <- readRDS(paste0(data_folder, "Trend/", current_year, "/ta
       rank <= 3 ~ "#ffffff",
       TRUE ~ "#000000"
     ),
-    text_size = case_when(
-      rank <= 3 ~ 5,
-      TRUE ~ 3.5
-    ),
-    diameter = Percentage / sum(Percentage)
+    #text_size = case_when(
+    #  rank <= 3 ~ 5,
+    #  TRUE ~ 3.5
+    #),
+    diameter = Percentage / sum(Percentage),
+    text_size = diameter*100/3.5
   )
 
 weighted_trend_name <- paste0(data_folder, "Trend/", current_year, "/weighted trend data.RDS")

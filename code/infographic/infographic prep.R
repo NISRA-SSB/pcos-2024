@@ -264,7 +264,7 @@ awareness_info_data3 <- gather(aware_stats_data, Answer, Percentage, -`output`) 
       grepl("Percentage of journeys", Group) ~ "Journeys by walking, cycling, public transport",
       TRUE ~ Group
     ),
-    Percentage = round_half_up(Percentage, 1),
+    Percentage = Percentage,
     Answer = factor(Answer,
       levels = c("dont_know", "no", "yes"),
       labels = c("Don't Know", "No", "Yes")

@@ -1029,7 +1029,7 @@ pub_awareness_chart_3 <- ggplot(
   ) +
   geom_text(
     data = awareness_info_data3[awareness_info_data3$Answer == "Don't Know", ],
-    label = awareness_info_data3$Percentage[awareness_info_data3$Answer == "Don't Know"],
+    label = round_half_up(awareness_info_data3$Percentage[awareness_info_data3$Answer == "Don't Know"],1),
     aes(x = 103),
     fontface = "bold",
     size = 6

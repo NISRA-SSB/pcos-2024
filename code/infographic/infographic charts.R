@@ -105,7 +105,7 @@ aware_trust_chart_2 <- ggplot(trust_df, aes(fill = Category, x = Percentage, y =
     )
   ) +
   scale_x_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
-  geom_text(aes(label = Percentage),
+  geom_text(aes(label = round_half_up(Percentage)),
     fontface = "bold",
     size = 3.5,
     position = position_stack(vjust = 0.5),
@@ -183,7 +183,7 @@ aware_trust_chart_3 <- ggplot(
     ),
     plot.margin = margin(r = 10, t = 20)
   ) +
-  geom_text(aes(label = Percentage),
+  geom_text(aes(label = round_half_up(Percentage)),
     fontface = "bold",
     size = 3,
     position = position_stack(vjust = 0.5),
@@ -191,9 +191,9 @@ aware_trust_chart_3 <- ggplot(
       confidentiality$Category == "Don't know",
     "white", "black"
     ),
-    hjust = ifelse(confidentiality$Percentage < 4, -2.5, 0.5)
+    hjust = ifelse(confidentiality$Percentage < 3.5, -2.5, 0.5)
   ) +
-  scale_y_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
+  scale_y_continuous(breaks = seq(0, 100, by = 20)) +
   guides(fill = guide_legend(reverse = TRUE)) +
   coord_cartesian(
     xlim = c(0.5, length(unique(confidentiality$Year)) + 0.7),
@@ -265,14 +265,14 @@ aware_trust_chart_4 <- ggplot(important_df, aes(fill = Category, y = Percentage,
     plot.margin = margin(l = 10)
   ) +
   scale_y_continuous(breaks = scales::pretty_breaks(n = 5)) +
-  geom_text(aes(label = Percentage),
+  geom_text(aes(label = round_half_up(Percentage)),
     fontface = "bold",
     size = 3,
     position = position_stack(vjust = 0.5),
     color = ifelse(important_df$Category == "Tend to disagree/strongly disagree",
       "#000000", "#ffffff"
     ),
-    hjust = ifelse(important_df$Percentage < 4, -4.5, 0.5)
+    hjust = ifelse(important_df$Percentage < 4, -3.5, 0.5)
   ) +
   coord_cartesian(
     xlim = c(0.5, length(unique(important_df$Year)) + 0.7),
@@ -332,7 +332,7 @@ aware_trust_chart_5 <- ggplot(
     plot.margin = margin(l = 10, r = 10, t = 10)
   ) +
   scale_x_continuous(breaks = scales::pretty_breaks(n = 5)) +
-  geom_text(aes(label = Percentage),
+  geom_text(aes(label = round_half_up(Percentage)),
     fontface = "bold",
     size = 3.5,
     position = position_stack(vjust = 0.5),
@@ -437,7 +437,7 @@ trust1alt <- paste0(
 
 ## Trust in NISRA ####
 
-title_perc <- paste0(trust_info_data2$`Percentage\n`[trust_info_data2$Year == current_year], "%")
+title_perc <- paste0(round_half_up(trust_info_data2$`Percentage\n`[trust_info_data2$Year == current_year]), "%")
 
 trust_chart_2 <- ggplot(trust_info_data2, aes(Year, `Percentage\n`, color = Category)) +
   geom_point(size = 6) +
@@ -456,7 +456,7 @@ trust_chart_2 <- ggplot(trust_info_data2, aes(Year, `Percentage\n`, color = Cate
     breaks = seq(0, 100, by = 10)
   ) +
   ggtitle(label = bquote("Trust in NISRA" ~ bold("remains high at") ~ bold(.(title_perc)))) +
-  geom_text(aes(label = paste0(`Percentage\n`, "%")),
+  geom_text(aes(label = paste0(round_half_up(`Percentage\n`), "%")),
             vjust = 2,
             size = 8,
             color = "#002060",
@@ -506,7 +506,7 @@ trust2alt <- paste0(
 
 ## NISRA stats are free from political interference ####
 
-chart_3_perc <- paste0(trust_info_data3$Percentage[trust_info_data3$Year == current_year], "%")
+chart_3_perc <- paste0(round_half_up(trust_info_data3$Percentage[trust_info_data3$Year == current_year]), "%")
 
 trust_chart_3 <- ggplot(
   trust_info_data3,
@@ -553,7 +553,7 @@ trust_chart_3 <- ggplot(
   scale_x_continuous(limits = c(0, 100), breaks = seq(0, 100, by = 20)) +
   geom_text(
     size = 5.3,
-    aes(label = paste0(Percentage, "%")),
+    aes(label = paste0(round_half_up(Percentage), "%")),
     position = position_dodge(width = 1),
     vjust = 0.4,
     hjust = -0.1,
@@ -585,7 +585,7 @@ nisra_ons_sig <- if (nisra_ons_z < qnorm(0.975) * -1) {
   "similar"
 }
 
-chart_4_perc <- paste0(trust_info_data4$Percentage[trust_info_data4$Year == current_year], "%")
+chart_4_perc <- paste0(round_half_up(trust_info_data4$Percentage[trust_info_data4$Year == current_year]), "%")
 
 trust_chart_4 <- ggplot(trust_info_data4, aes(x = Year, y = Percentage, group = factor(Organisation))) +
   geom_bar(
@@ -631,7 +631,7 @@ trust_chart_4 <- ggplot(trust_info_data4, aes(x = Year, y = Percentage, group = 
   ) +
   geom_text(
     size = 7.5,
-    aes(label = paste0(Percentage, "%")),
+    aes(label = paste0(round_half_up(Percentage), "%")),
     position = position_dodge(width = 0.7),
     vjust = -0.25,
     fontface = "bold"
@@ -837,7 +837,7 @@ for (i in 1:nrow(awareness_info_data1)) {
     annotate("text",
       x = 0,
       y = 0,
-      label = paste0(awareness_info_data1$Percentage[i], "%"),
+      label = paste0(round_half_up(awareness_info_data1$Percentage[i]), "%"),
       size = awareness_info_data1$text_size[i],
       fontface = "bold",
       color = awareness_info_data1$text_colour[i]
@@ -963,7 +963,7 @@ pub_awareness_chart_2 <- ggplot(awareness_info_data2, aes(
   ) +
   geom_text(
     size = 3.5,
-    aes(label = paste0(Percentage, "%")),
+    aes(label = paste0(round_half_up(Percentage), "%")),
     position = position_dodge(width = 0.7),
     vjust = -0.25
   ) +

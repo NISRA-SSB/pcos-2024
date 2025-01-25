@@ -20,14 +20,14 @@ awareness_of_nisra <- data.frame(
   as.data.frame() %>%
   mutate(
     Answer = c("Yes", "No"),
-    Percentage = round_half_up(V1),
+    Percentage = V1,
     year = current_year
   ) %>%
   select(-V1)
 
 donut_chart_df <- awareness_of_nisra %>%
   mutate(
-    label = toupper(paste0(Percentage, "% ", Answer)),
+    label = toupper(paste0(round_half_up(Percentage), "% ", Answer)),
     ymax = cumsum(Percentage),
     ymin = c(0, head(ymax, n = -1))
   )
@@ -45,11 +45,11 @@ trust_nisra_stats <- trust_stats_data %>%
 
 trust_df <- gather(trust_nisra_stats, Category, Percentage, -Year) %>%
   mutate(
-    Percentage = round_half_up(Percentage),
+    Percentage = Percentage,
     Year = as.character(Year)
   )
 
-# Confidentiality
+## Personal Information kept confidential ####
 confidentiality <- confidential_data %>%
   tail(5) %>%
   mutate(year = as.numeric(year)) %>%
@@ -61,7 +61,7 @@ confidentiality <- confidential_data %>%
   )) %>%
   gather(Category, Percentage, -Year) %>%
   mutate(
-    Percentage = round_half_up(Percentage),
+    Percentage = Percentage,
     Year = as.character(Year),
     Category = factor(Category,
       levels = c(
@@ -73,7 +73,7 @@ confidentiality <- confidential_data %>%
   )
 
 
-## Personal Information provided to NISRA will be kept confidential ####
+## NISRA Statistics are important ####
 importance <- stats_important_data %>%
   tail(5) %>%
   mutate(year = as.numeric(year)) %>%
@@ -84,7 +84,7 @@ importance <- stats_important_data %>%
     "Don't know"
   ))
 important_df <- gather(importance, Category, Percentage, -Year)
-important_df$Percentage <- round_half_up(important_df$Percentage)
+important_df$Percentage <- important_df$Percentage
 important_df$Year <- as.character(important_df$Year)
 
 ## NISRA compared to other institutions ####
@@ -97,7 +97,7 @@ institutions <- institutions %>%
     "Don't know"
   ))
 institutions_df <- gather(institutions, Category, Percentage, -Institution)
-institutions_df$Percentage <- round_half_up(institutions_df$Percentage)
+institutions_df$Percentage <- institutions_df$Percentage
 trust_compared_df <- institutions_df
 
 # Trust Infographic ####
@@ -109,8 +109,8 @@ trust_info_data1 <- trust_stats_nisra_ons_data[trust_stats_nisra_ons_data$org %l
   set_names(new_trust_names) %>%
   gather(class, prop, -Org) %>%
   mutate(
-    prop = round_half_up(prop),
-    label = paste0(prop, "% ", toupper(class))
+    prop = prop,
+    label = paste0(round_half_up(prop), "% ", toupper(class))
   )
 
 ## Chart 2 ####
@@ -121,7 +121,7 @@ trust_info_data2 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_
   filter(`Response (%)` == "Tend to trust/trust a great deal") %>%
   gather(Year, Percentage, -`Response (%)`) %>%
   mutate(
-    Percentage = round_half_up(Percentage),
+    Percentage = Percentage,
     Year = as.numeric(Year),
     `Response (%)` = "Trust in NISRA Statistics"
   ) %>%
@@ -133,7 +133,7 @@ line_chart_df <- trust_info_data2
 trust_info_data3 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_6a_data.RDS"))
 trust_info_data3 <- trust_info_data3[trust_info_data3$`Response (%)` %like% "Strongly agree/Tend to agree", ]
 trust_info_data3 <- gather(trust_info_data3, Year, Percentage, -`Response (%)`)
-trust_info_data3$Percentage <- round_half_up(trust_info_data3$Percentage)
+trust_info_data3$Percentage <- trust_info_data3$Percentage
 new_info_names <- c("Category", "Year", "Percentage")
 trust_info_data3 <- trust_info_data3 %>%
   set_names(new_info_names)
@@ -153,7 +153,7 @@ trust_info_data4 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_
   mutate(
     Organisation = "ONS",
     Year = rownames(.),
-    Percentage = round_half_up(as.numeric(V1))
+    Percentage = as.numeric(V1)
   ) %>%
   select(-V1) %>%
   tail(4) %>%
@@ -191,7 +191,7 @@ awareness_info_data1 <- readRDS(paste0(data_folder, "Trend/", current_year, "/ta
   gather(Year, Percentage, -`Response (%)`) %>%
   filter(as.numeric(Year) >= 2016) %>%
   mutate(
-    Percentage = round_half_up(Percentage),
+    Percentage = Percentage,
     Year = as.numeric(Year),
     end = Percentage / 2
   ) %>%
@@ -253,7 +253,7 @@ awareness_info_data2 <- subset(awareness_info_data2, awareness_info_data2$year =
   awareness_info_data2$year == "2021" |
   awareness_info_data2$year == "2023")
 awareness_info_data2 <- gather(awareness_info_data2, Group, Percentage, -`year`)
-awareness_info_data2$Percentage <- round_half_up(awareness_info_data2$Percentage)
+awareness_info_data2$Percentage <- awareness_info_data2$Percentage
 awareness_info_data2$Group <- toupper(awareness_info_data2$Group)
 
 ## Chart 4 ####

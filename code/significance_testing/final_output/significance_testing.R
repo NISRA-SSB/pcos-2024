@@ -31,17 +31,19 @@ data_ons_raw <- read.xlsx(paste0(data_folder, "ONS/", ons_filename), sheet = "we
 
 names(data_ons_raw) <- gsub(".", " ", names(data_ons_raw), fixed = TRUE)
 
+#re-calculates percentage in ons_data excluding 'Prefer not to answer'
+#'Weighted base (ex DK)' is the total of the re-calculated percentages excluding 'Don't Know'
 data_ons <- data_ons_raw %>%
   mutate(
     `Weighted base` = 100 - `Prefer not to answer`,
-    `Weighted base (ex DK)` = `Weighted base` - `Don't know`,
     across(.cols = `Don't know`:`Strongly disagree`, ~ .x / `Weighted base` * 100),
+    `Weighted base (ex DK)` = 100 - `Don't know`,
     `Trust a great deal/Tend to trust` = `Trust a great deal` + `Tend to trust`,
     `Tend to distrust/Distrust greatly` = `Tend to distrust` + `Distrust greatly`,
     `Strongly Agree/Tend to Agree` = `Strongly agree` + `Tend to agree`,
     `Tend to disagree/Strongly disagree` = `Tend to disagree` + `Strongly disagree`
   ) %>%
-  select(-`Prefer not to answer`) %>%
+  select(-`Weighted base`, -`Prefer not to answer`) %>%
   left_join(unweighted_ons,
             by = "Question")
 

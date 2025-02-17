@@ -32,7 +32,7 @@ current_year <- 2023
 ons_year <- 2023
 
 survey_start_mth <- "September"
-survey_end_mth <- "December"
+survey_end_mth <- "November"
 
 # Set to "TrustNIAssembly2" (name when Assembly is sitting)
 # or "TrustElectedRep2" (name when Assembly isn't sitting, eg 2019)
@@ -54,7 +54,7 @@ statistic_type <- "os" # options: as  (Accredited Official Statistics),
 
 # Set the report publication data and next publication data if required
 
-pub_date <- "10 January 2024"
+pub_date <- "27 February 2025"
 next_pub_date <- "10 June 2025"
 
 ##### CONTACT DETAILS #####

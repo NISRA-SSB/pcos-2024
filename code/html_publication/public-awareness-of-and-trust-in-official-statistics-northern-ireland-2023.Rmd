@@ -44,9 +44,8 @@ This report presents findings on public awareness of NISRA (Northern Ireland Sta
 
 **Awareness**
 
--   Public awareness of NISRA was moderate in `r current_year` with almost half of respondents (`r heard_of_nisra`%) indicating that they had heard of the Agency before being contacted about the survey.
+-   Public awareness of NISRA was moderate in `r current_year` with almost half of respondents (`r heard_of_nisra`%) indicating that they had heard of the Agency before being contacted about the survey. This is similar to 2022, when 49% of respondents had heard of NISRA.
 
--   Awareness of NISRA has decreased since 2020 and 2021, when 58% and 55% of respondents respectively, had heard of NISRA. However awareness of the Agency remains higher than in earlier years (2009 to 2019) when 35% or less of respondents had heard of NISRA.
 
 **Trust**
 
@@ -60,7 +59,7 @@ This report presents findings on public awareness of NISRA (Northern Ireland Sta
 
 **Political Interference**
 
--   Over four-fifths (`r free_from_interference`%) of respondents agree that statistics produced by NISRA are free from political interference.
+-   Four-fifths (`r free_from_interference`%) of respondents agree that statistics produced by NISRA are free from political interference.
 
 `r f_borderline()`
 
@@ -74,7 +73,7 @@ Official Statistics in Northern Ireland are produced by Government Departments, 
 
 NISRA is an Agency within the Department of Finance and provides statistical services across government in Northern Ireland. The majority of [Northern Ireland official statistics](https://www.nisra.gov.uk/support/official-statistics/northern-ireland-official-statistics) are produced by NISRA staff and NISRA branches can be found within all Northern Ireland Departments, and several Arm’s Length Bodies. NISRA has been measuring the levels of public confidence or trust in the Agency and in the statistics it produces since the Code was produced in 2009. These levels are monitored by the Agency and used to inform communication and marketing strategies.
 
-In the UK, the Office for National Statistics (ONS) is the largest producer of official statistics. Public trust in the ONS and the statistics it produces are also monitored and this report contains comparisons between NISRA and ONS. The ONS survey samples respondents in England, Scotland and Wales whilst the NISRA survey samples respondents in Northern Ireland. The most recent ONS survey was conducted in `r ons_year` ([Public Confidence in Official Statistics `r ons_year` (ONS)](https://natcen.ac.uk/publications/public-confidence-in-official-statistics/)).
+In the UK, the Office for National Statistics (ONS) is the largest producer of official statistics. Public trust in the ONS and the statistics it produces are also monitored and this report contains comparisons between NISRA and ONS. The ONS survey samples respondents in England, Scotland and Wales whilst the NISRA survey samples respondents in Northern Ireland. The most recent ONS survey was conducted in `r ons_year` ([Public Confidence in Official Statistics `r ons_year` (ONS)](https://natcen.ac.uk/publications/public-confidence-official-statistics)).
 
 Detailed tables are published alongside this report. These include the source data for all the charts and commentary and additional breakdowns (see [Appendix B](public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`-appendix-b.html)).
 
@@ -90,9 +89,9 @@ Just under half of respondents (`r heard_of_nisra`%) said they had heard of NISR
 
 ### Comparison over time
 
-This has decreased since 2020 and 2021, when 58% and 55% of respondents respectively had heard of NISRA.
+Awareness is similar to 2022, when 49% of respondents had heard of NISRA, but lower than in 2020 and 2021 (during the COVID-19 pandemic), when 58% and 55% of respondents respectively had heard of NISRA.
 
-Although there has been a decrease since 2020 and 2021, awareness of NISRA in 2022 is notably higher than in 2019 (35%) and previous years, before the start of the COVID-19 pandemic (Chart 1).
+Although awareness of NISRA has decreased since 2020 and 2021, awareness is still notably higher than in 2019 and previous years, prior to the COVID-19 pandemic (Chart 1).
 
 #### Chart 1: Awareness of NISRA (2009-`r current_year`)
 
@@ -159,15 +158,15 @@ plot_ly(aware_nisra_data,
   ) %>%
   config(displayModeBar = FALSE)
 
-f_embed_ods(df = table_1a_data,
-  sheet_title = paste0("Table 1a: Awareness of NISRA, 2009-", current_year),
-  tab_name = "awareness_of_nisra")
+f_embed_ods_timeseries(df = table_1a_data,
+  sheet_title = paste0("Table 1a: Awareness of NISRA, 2009 to ", current_year),
+  tab_name = "awareness_of_nisra", startyear = 2009)
 
 ```
 
 ### Comparison with ONS
 
-Public awareness of NISRA remains lower than awareness of ONS, with three quarters (`r aware_of_ons`%) of respondents having heard of ONS based on the latest available data (`r ons_year`). The difference between public awareness levels for NISRA and ONS has narrowed since 2018, which was prior to the start of the COVID-19 pandemic (Chart 2).
+Public awareness of NISRA remains lower than awareness of ONS, with three quarters (`r aware_of_ons`%) of respondents in 2023 reporting having heard of ONS. The difference between public awareness levels for NISRA and ONS has narrowed since 2018, which was prior to the start of the COVID-19 pandemic (Chart 2).
 
 #### Chart 2: Awareness of NISRA (2014-`r current_year`) and ONS (2014-`r ons_year`)
 
@@ -211,25 +210,25 @@ plot_ly(aware_nisra_ons_data,
   config(displayModeBar = FALSE)
 
 
-f_embed_ods(df = table_1a_data,
-  sheet_title = paste0("Table 1a: Awareness of NISRA, 2009-", current_year),
-  tab_name = "awareness_of_nisra")
+f_embed_ods_timeseries(df = table_1a_data,
+  sheet_title = paste0("Table 1a: Awareness of NISRA, 2009 to ", current_year),
+  tab_name = "awareness_of_nisra", startyear = 2009)
 
 div(style = "height: 20px; width: 100%")
 
-f_embed_ods(df = table_1c_data,
+f_embed_ods_timeseries(df = table_1c_data,
   sheet_title = paste0("Table 1c: Awareness of ONS, 2014 to ", ons_year),
-  tab_name = "awareness_of_ons")
+  tab_name = "awareness_of_ons", startyear = 2014)
 
 ```
 
 ## 2. Awareness of NISRA Statistics
 
-### Aware of NISRA statistics, not previously heard of NISRA
+### Awareness of NISRA statistics, where not previously heard of NISRA
 
 Respondents who had not previously heard of NISRA were asked whether they had heard of specific NISRA statistics. `r not_heard_aware_none`% of these respondents had not heard of any of the statistics listed, while `r not_heard_aware_all`% had heard of all the statistics. A more detailed breakdown is available in the accompanying tables (see [Appendix B](#public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`-appendix-b.html)).
 
-`r not_heard_aware_census`% of respondents who had not previously heard of NISRA were aware of the Northern Ireland Census, while more than a third had heard of the unemployment rate (`r not_heard_aware_unemployment`%), hospital waiting times (`r not_heard_aware_hospital`%) and the number of people who live in NI (`r not_heard_aware_people`%). Only `r not_heard_aware_cycling`% of these respondents had heard of statistics on journeys made by walking, cycling or public transport in Northern Ireland (Chart 3).
+`r not_heard_aware_census`% of respondents who had not previously heard of NISRA were aware of the Northern Ireland Census, while `r not_heard_aware_hospital`% were aware of statistics on hospital waiting times and `r not_heard_aware_unemployment`% had heard of the unemployment rate. Less than 1 in 13 (`r not_heard_aware_cycling`%) of these respondents had heard of statistics on journeys made by walking, cycling or public transport in Northern Ireland (Chart 3).
 
 #### Chart 3: Awareness of specific NISRA statistics for respondents who were not aware of NISRA, `r current_year`
 
@@ -281,12 +280,11 @@ f_extract_sheet(path = xl_filename,
   sheet_title = paste0("Table 2.1a-j: Awareness of NISRA statistics among those who had not previously heard of NISRA, ", current_year))
 
 ```
-
-### Aware statistics produced by NISRA, heard of NISRA
+### Awareness of statistics produced by NISRA, where heard of NISRA
 
 Respondents who had heard of NISRA were asked whether they were aware that NISRA produced certain statistics. Of these respondents, `r heard_aware_all`% were aware that NISRA produced all the listed statistics while `r heard_aware_none`% were unaware that NISRA produced any of the listed statistics. A more detailed breakdown is available in the accompanying tables (see [Appendix B](public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`-appendix-b.html)).
 
-Awareness was highest for the Northern Ireland Census (`r heard_aware_census`%), followed by the number of people who live in Northern Ireland (`r heard_aware_people`%) and the number of deaths (`r heard_aware_deaths`%). Statistics on qualifications of school leavers (`r heard_of_aware_qualifications`%), people living in poverty (`r heard_of_aware_poverty`%) and the percentage of journeys made by walking, cycling or public transport (`r heard_of_aware_cycling`%) were the least recognised as being produced by NISRA.
+Awareness was highest for the Northern Ireland Census (`r heard_aware_census`%), followed by statistics on the number of people who live in Northern Ireland (`r heard_aware_people`%), the number of deaths (`r heard_aware_deaths`%) and the unemployment rate (60%). Statistics on  the percentage of journeys made by walking, cycling or public transport (`r heard_of_aware_cycling`%) were the least recognised as being produced by NISRA.
 
 #### Chart 4: Aware NISRA produces specific statistics for respondents who were aware of NISRA, `r current_year`
 
@@ -349,9 +347,9 @@ Trust in NISRA as an institution is high, with `r trust_in_nisra`% of all respon
 
 ### Comparison over time
 
-When only respondents who expressed an opinion are considered, i.e. excluding ‘don’t knows’, there is no significant difference in trust in NISRA between 2022 and 2021.
+There is no significant difference in the level of trust in NISRA between 2023 and 2022 (Chart 5).
 
-Trust in NISRA in the last three years (2022, 2021 and 2020) was significantly higher than in 2019 and previous years, prior to the onset of the COVID-19 pandemic (Chart 5).
+When only respondents who expressed an opinion are considered, i.e. excluding 'don't knows', trust in NISRA in 2023 is slightly lower than in 2021, and similar to the levels of trust in 2019 and 2016. Trust in NISRA in 2023 is significantly higher than in 2014.
 
 #### Chart 5: Trust in NISRA (2014-`r current_year`)
 
@@ -361,7 +359,7 @@ f_stacked_bar_vertical(trust_nisra_data)
 
 ```
 
-`r f_embed_ods(df = table_3.1a_data, sheet_title = paste0("Table 3.1a: Trust in NISRA, 2014 to ", current_year), tab_name = "trust_nisra")`
+`r f_embed_ods_timeseries(df = table_3.1a_data, sheet_title = paste0("Table 3.1a: Trust in NISRA, 2014 to ", current_year), tab_name = "trust_nisra", startyear = 2014)`
 
 ###	Comparison with ONS
 
@@ -385,9 +383,9 @@ f_embed_ods(df = table_3.1b_data,
 
 ###	Comparison with other institutions
 
-Trust in NISRA is significantly higher than trust in the media, the NI Assembly and the Civil Service (Chart 7).
+Trust in NISRA is significantly higher than trust in the media, elected bodies and the Civil Service (Chart 7).
 
-Across all institutions, trust is lowest for the media (`r trust_in_media`%) and the NI Assembly (`r trust_in_assembly`%), whilst `r trust_in_nics`% of respondents said they trust the Civil Service.
+Across all institutions, trust is lowest for the media (`r trust_in_media`%) and elected bodies (`r trust_in_assembly`%), whilst `r trust_in_nics`% of respondents said they trust the Civil Service.
 
 A higher proportion of respondents don’t know if they trust NISRA or not (`r dont_know_trust_nisra`%) compared to other institutions.
 
@@ -458,11 +456,11 @@ f_trust_instiutions(title = paste0("Tables 3.1a-3.4a: Trust in Institutions, 201
 
 ### Current year, `r current_year`
 
-The majority of respondents (`r trust_in_nisra_stats`%) trust NISRA statistics a great deal or tend to trust them while `r distrust_nisra_stats`% of respondents distrust greatly or tend to distrust them. The remaining respondents (`r dont_know_trust_nisra_stats`%) don’t know whether they trust NISRA statistics or not (Chart 8). Trust in NISRA statistics is higher among those that have heard of NISRA as an institution (`r heard_of_and_trust_nisra_stats`%). Further detail is available in the accompanying tables (see [Appendix B](public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`-appendix-b.html)).
+The majority of respondents (`r trust_in_nisra_stats`%) trust NISRA statistics a great deal or tend to trust them while `r distrust_nisra_stats`% of respondents distrust NISRA statistics greatly or tend to distrust them. The remaining respondents (`r dont_know_trust_nisra_stats`%) don’t know whether they trust NISRA statistics or not (Chart 8). Trust in NISRA statistics is higher among those who have heard of NISRA as an institution (`r heard_of_and_trust_nisra_stats`%). Further detail is available in the accompanying tables (see [Appendix B](public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`-appendix-b.html)).
 
 ### Comparison over time
 
-Amongst those who expressed an opinion there was no significant difference in trust in NISRA statistics between 2022 and 2021. However, for respondents who expressed an opinion, trust in NISRA statistics was significantly higher in 2021 and 2022 compared to 2019 and earlier years.
+There was no significant difference in trust in NISRA statistics between 2023 and 2022. However, for those respondents who expressed an opinion, trust in NISRA statistics was significantly higher in 2023 compared to 2019 and earlier years.
 
 #### Chart 8: Trust in NISRA statistics (2014-`r current_year`)
 
@@ -470,17 +468,17 @@ Amongst those who expressed an opinion there was no significant difference in tr
 
 f_stacked_bar_vertical(trust_stats_data)
 
-f_embed_ods(df = table_4a_data, 
+f_embed_ods_timeseries(df = table_4a_data, 
   sheet_title = paste0("Table 4a: Trust in NISRA statistics, 2014 to ", current_year), 
-  tab_name = "trust_stats")
+  tab_name = "trust_stats", startyear = 2014)
 
 ```
 
 ###	Comparison with ONS
 
-The level of trust in NISRA statistics (`r trust_in_nisra_stats`%) is similar to the level of trust in ONS statistics (`r trust_in_ons_stats`%) (Chart 9). However, distrust in ONS statistics (`r distrust_ons_stats`%) is significantly higher than distrust in NISRA statistics (`r distrust_nisra_stats`%).
+The level of trust in NISRA statistics (`r trust_in_nisra_stats`%) is higher than the level of trust in ONS statistics (`r trust_in_ons_stats`%).
 
-More respondents answered ‘don’t know’ with regard to NISRA statistics (`r dont_know_trust_nisra_stats`%) than for ONS statistics (`r dont_know_trust_ons_stats`%).
+While more respondents answered ‘don’t know’ with regard to NISRA statistics (`r dont_know_trust_nisra_stats`%) than for ONS statistics (`r dont_know_trust_ons_stats`%), the level of distrust in NISRA statistics (4%) is much lower than the level of distrust in ONS statistics (14%) (Chart 9).
 
 #### Chart 9: Trust in statistics produced by NISRA (`r current_year`) and ONS (`r ons_year`)
 
@@ -490,9 +488,9 @@ f_stacked_bar_vertical(trust_stats_nisra_ons_data)
 
 f_embed_ods(df = table_4b_data,
   sheet_title = if (current_year == ons_year) {
-    paste0("Table 4b: Trust in NISRA statistics and ONS statistics, ", current_year, ")")
+    paste0("Table 4b: Trust in NISRA statistics and ONS statistics, ", current_year,")" )
   } else {
-    paste0("Table 4b: Trust in NISRA statistics (", current_year, ") and ONS statistics (", ons_year, ")")
+    paste0("Table 4b: Trust in NISRA statistics (", current_year, ") and ONS statistics (", ons_year,")")
   }, 
   tab_name ="trust_nisra_ons_stats")
 
@@ -508,7 +506,7 @@ The majority of respondents (`r importance_of_stats`%) agree that the statistics
 
 ### Comparison over time
 
-Amongst respondents who had a view, the proportion agreeing that NISRA statistics are important to understand Northern Ireland has decreased slightly since 2021.
+Amongst respondents who had a view, the proportion agreeing that NISRA statistics are important to understand Northern Ireland is similar to 2022.
 
 #### Chart 10: NISRA statistics are important to understand Northern Ireland (2016-`r current_year`)
 
@@ -516,15 +514,18 @@ Amongst respondents who had a view, the proportion agreeing that NISRA statistic
 
 f_stacked_bar_vertical(stats_important_data)
 
-f_embed_ods(df = table_5a_data,
+f_embed_ods_timeseries(df = table_5a_data,
   sheet_title = paste0("Table 5a: Statistics produced by NISRA are important to understand Northern Ireland, 2016 to ", current_year),
-  tab_name = "value_nisra")
+  tab_name = "value_nisra", startyear = 2016)
 
 ```
 
 ###	Comparison with ONS
 
-The percentage of respondents who agree that the statistics produced are important to understand their country is similar for both ONS (`r importance_of_ons`%) and NISRA (`r importance_of_stats`%). However, the level of disagreement is significantly higher for ONS (`r disagre_importance_ons`%) than for NISRA (`r disagree_importance`%). NISRA respondents are more likely to answer ‘don’t know’ (`r dont_know_importance`%) than ONS respondents (`r dont_know_importance_ons`%) (Chart 11).
+The percentage of respondents who agree that the statistics produced are important to understand their country is higher for NISRA (`r importance_of_stats`%) than for ONS (`r importance_of_ons`%). 
+
+While NISRA respondents are more likely to answer ‘don’t know’ (`r dont_know_importance`%) than ONS respondents (`r dont_know_importance_ons`%), the level of disagreement is notably lower for NISRA (`r disagree_importance`%) than it is for ONS (`r disagre_importance_ons`%) (Chart 11).
+
 
 #### Chart 11: Statistics produced are important to understand our country, NISRA (`r current_year`) and ONS (`r ons_year`)
 
@@ -548,11 +549,13 @@ f_embed_ods(df = table_5b_data,
 
 ### Current year, `r current_year`
 
-Over four-fifths (`r free_from_interference`%) of respondents agree that statistics produced by NISRA are free from political interference. `r disagree_interference`% of respondents disagree that NISRA statistics are free from political interference whilst the remaining respondents (`r dont_know_interference`%) answered that they ‘don’t know’ (Chart 12).
+Four-fifths (`r free_from_interference`%) of respondents agree that statistics produced by NISRA are free from political interference. Less than 1 in 10 (`r disagree_interference`%) of respondents disagree that NISRA statistics are free from political interference whilst the remaining respondents (`r dont_know_interference`%) answered that they ‘don’t know’ (Chart 12).
 
 ### Comparison over time
 
-When only those who expressed an opinion are considered, there is no significant difference between 2022 and the previous two years (2021 and 2020). The level of agreement that NISRA statistics are free from political interference was however significantly higher in 2022 than in 2014, 2016 or 2019, before the onset of the COVID19 pandemic.
+When all respondents are considered, the level of agreement that NISRA statistics are free from political interference is similar to 2022. However, when only those who expressed an opinion are considered, agreement has fallen since 2022.
+
+The percentage of respondents disagreeing that NISRA statistics are free from political interference has increased slightly since 2022 but remains significantly lower than 2014 and 2016. 
 
 #### Chart 12: NISRA statistics are free from political interference (2014-`r current_year`)
 
@@ -560,9 +563,9 @@ When only those who expressed an opinion are considered, there is no significant
 
 f_stacked_bar_vertical(political_data)
 
-f_embed_ods(df = table_6a_data, 
+f_embed_ods_timeseries(df = table_6a_data, 
   sheet_title = paste0("Table 6a: Statistics produced by NISRA are free from political interference, 2014 to ", current_year),
-  tab_name = "political_nisra")
+  tab_name = "political_nisra", startyear = 2014)
 
 ```
 
@@ -580,7 +583,7 @@ f_embed_ods(df = table_6b_data,
   sheet_title = if (current_year == ons_year) {
     paste0("Table 6b: Statistics produced are free from political interference (NISRA and ONS) , ", current_year)
   } else {
-    paste0("Table 6b: Statistics produced are free from political interference (NISRA ", current_year, " and ONS ", ons_year, ")")},
+    paste0("Table 6b: Statistics produced are free from political interference (NISRA ", current_year, " and ONS ",ons_year,")")},
   tab_name = "political_nisra_ons")
 
 ```
@@ -591,11 +594,13 @@ f_embed_ods(df = table_6b_data,
 
 ### Current year, `r current_year`
 
-Over nine out of every ten respondents (`r agree_confidential`%) agree that personal information provided to NISRA will be kept confidential. The majority of the remaining respondents don’t know (`r dont_know_confidential`%) while 1 in every 100 (`r disagree_confidential`%) respondents disagree (Chart 14).
+Eighty-five percent of respondents (`r agree_confidential`%) agree that personal information provided to NISRA will be kept confidential while 7% disagree. The remaining respondents don’t know (`r dont_know_confidential`%) (Chart 14).
 
 ### Comparison over time
 
-When only those who expressed an opinion are considered, there is no significant difference between 2022 and the previous two years (2021 and 2020). The level of agreement in 2022 is however significantly higher than in 2014, 2016 or 2019.
+The level of agreement that personal information provided to NISRA will be kept confidential has dropped since 2022. When only those respondents who expressed an opinion are considered, the level of agreement is significantly lower than in 2019 to 2022 but similar to 2016 and 2014.
+
+The percentage of respondents in 2023 who disagreed with the statement is higher than in the previous four years (2019 to 2022) but similar to the level seen in 2014 and 2016.
 
 #### Chart 14: Personal information provided to NISRA will be kept confidential (2014-`r current_year`)
 
@@ -603,15 +608,15 @@ When only those who expressed an opinion are considered, there is no significant
 
 f_stacked_bar_vertical(confidential_data)
 
-f_embed_ods(df = table_7a_data, 
+f_embed_ods_timeseries(df = table_7a_data, 
   sheet_title = paste0("Table 7a: Personal information provided to NISRA will be kept confidential, 2014 to ", current_year),
-  tab_name = "confidential_nisra")
+  tab_name = "confidential_nisra", startyear = 2014)
 
 ```
 
 ###	Comparison with ONS
 
-In comparison, `r agree_confidential_ons`% of ONS respondents in `r ons_year` agree that personal information provided to ONS will be kept confidential. This is significantly lower than for NISRA (Chart 15).
+In comparison, `r agree_confidential_ons`% of ONS respondents in `r ons_year` agree that personal information provided to ONS will be kept confidential. This is significantly higher than for NISRA (Chart 15).
 
 #### Chart 15: Belief that personal information provided will be kept confidential, NISRA (`r current_year`) and ONS (`r ons_year`)
 
@@ -637,7 +642,7 @@ f_embed_ods(df = table_7b_data,
 -   [Summary infographics](https://www.nisra.gov.uk/publications/public-awareness-and-trust-official-statistics-`r current_year`)
 -   [Statistics produced by NISRA](https://www.nisra.gov.uk/statistics)
 -   [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/the-code/)
--   [ONS - Public Confidence in Official Statistics](http://natcen.ac.uk/our-research/research/public-confidence-in-official-statistics/)
+-   [ONS - Public Confidence in Official Statistics](https://natcen.ac.uk/publications/public-confidence-official-statistics/)
 
 `r f_borderline()`
 
@@ -645,7 +650,7 @@ f_embed_ods(df = table_7b_data,
 
 These official statistics are produced in compliance with the [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/the-code/).
 
-Our statistical practice is regulated by the Office for Statistics Regulation (OSR). OSR sets the standards of trustworthiness, quality and value in the Code of Practice for Statistics that all producers of official statistics should adhere to. You are welcome to contact us directly with any comments about how we meet these standards by emailing <branch or lead statistician email address>. Alternatively, you can contact OSR by emailing [regulation\@statistics.gov.uk](mailto:regulation@statistics.gov.uk){.email} or via the [OSR website](https://osr.statisticsauthority.gov.uk/).
+Our statistical practice is regulated by the Office for Statistics Regulation (OSR). OSR sets the standards of trustworthiness, quality and value in the Code of Practice for Statistics that all producers of official statistics should adhere to. You are welcome to contact us directly with any comments about how we meet these standards by emailing [Norma.Broomfield\@nisra.gov.uk](mailto:norma.broomfield@nisra.gov.uk){.email}. Alternatively, you can contact OSR by emailing [regulation\@statistics.gov.uk](mailto:regulation@statistics.gov.uk){.email} or via the [OSR website](https://osr.statisticsauthority.gov.uk/).
 
 `r f_borderline()`
 
@@ -665,29 +670,29 @@ Each year CSU sets the content of the CHS questionnaire in consultation with cli
 
 ### Data Collection
 
-The CHS is based on a systematic random sample of 9,000 addresses drawn each year from the NISRA Address Register. The NISRA Address Register is maintained by Census Branch and is created by merging the POINTER database (maintained by Land and Property Services) with additional records, and removing duplicates and communal establishments. The interviews are spread over the 12 months from April to March. Data are collected through telephone interviews using CATI (Computer-assisted telephone interviewing) or face-to-face interviews using CAPI (Computer Assisted Personal Interviewing). Of the 2,990 addresses selected for interview from `r survey_start_mth` to `r survey_end_mth` `r current_year`, `r sample_size` persons participated in this module of the survey.
+The CHS is based on a systematic random sample of approximately 9,000 addresses drawn each year from the NISRA Address Register. The NISRA Address Register is maintained by Census Branch and is created by merging the POINTER database (maintained by Land and Property Services) with additional records, and removing duplicates and communal establishments. The interviews are spread over the 12 months from April to March. Data are collected through face-to-face interviews using CAPI (Computer Assisted Personal Interviewing) or telephone interviews using CATI (Computer-assisted telephone interviewing). Of the 2,340 addresses selected for interview from `r survey_start_mth` to `r survey_end_mth` `r current_year`, `r sample_size` persons participated in this module of the survey.
 
 ### Survey Estimates
 
 Surveys gather information from a sample rather than from the whole population. Results from surveys are always estimates, not precise figures. This means that they have a margin of error which can have an impact on how changes in the numbers should be interpreted, especially in the short term. An estimate of the margin of error due to the sampling process can be calculated and used to produce an interval of values known as a confidence interval. This has been taken into account when carrying out significance tests.
 
-Significance tests were carried out to determine if there were likely to be real differences between respondent groups. The significance tests were carried out at 5% significance level and only differences which were statistically significant (p\<0.05) are included in this report. This means that there is at least a 95% probability that there is a genuine difference between the views of, for example, those in paid employment and those not in paid employment and the difference between the two groups in the sample is not simply explained by chance.
+Significance tests were carried out to determine if there were likely to be real differences between respondent groups. The significance tests were carried out at 5% significance level and only differences which were statistically significant (p\<0.05) are included in this report. This means that there is at least a 95% probability that there is a genuine difference between the views of, for example, respondents in 2022 and respondents in 2023 and the difference between these two samples is not simply explained by chance.
 
 ### Weighting
 
-The CHS aspires to interview everyone aged 16 or over at a selected household, but non-response either by the household as a whole or by individuals within the household introduces non-response bias to the results. To counter this, weights are applied to the analysis on the basis of age and gender. Weights are calculated based on how the age and gender profile of the survey respondents differs from that of the latest mid-year population estimates published by NISRA. The 2021 mid-year estimates (published in November 2022) were used for the 2022/23 CHS. This weighting process adjusts the results to those that would have been achieved if the sample had been drawn as a random sample of adults across Northern Ireland, thus allowing inferences to be made about the population. The percentages given in the tables in this report are based on weighted data. The totals in the tables are not weighted.
+The CHS aspires to interview everyone aged 16 or over at a selected household, but non-response either by the household as a whole or by individuals within the household introduces non-response bias to the results. To counter this, weights are applied to the analysis on the basis of age and sex. Weights are calculated based on how the age and sex profile of the survey respondents differs from that of the latest mid-year population estimates published by NISRA. The 2022 mid-year estimates (published in August 2023) were used for the 2023/24 CHS. This weighting process adjusts the results to those that would have been achieved if the sample had been drawn as a random sample of adults across Northern Ireland, thus allowing inferences to be made about the population. The percentages given in the tables in this report are based on weighted data. The totals in the tables are not weighted.
 
 ### Quality Checks
 
-Both CATI and CAPI allow plausibility and consistency checks to be incorporated within the questionnaire to improve data quality. Data returned is coded and fully validated by CHS statistical staff, including treatment of outliers and detailed consistency checking including non-credible checks. A 100% check of all coded data is undertaken to ensure that coding procedures are of a high standard.
+Both CAPI and CATI allow plausibility and consistency checks to be incorporated within the questionnaire to improve data quality. Data returned is coded and fully validated by CHS statistical staff, including treatment of outliers and detailed consistency checking including non-credible checks. A 100% check of all coded data is undertaken to ensure that coding procedures are of a high standard.
 
 On receipt of the CHS data, Statistical Support Branch validate and perform quality checks on the data. Range and plausibility checks are performed for returned and derived variables and the data are also checked for ‘missing values’. The data are compared with previous years to identify any unusual trends or distributions, or values that lie outside expected norms. All anomalies are queried with CHS staff who can re-check the coding and source data.
 
 ### Impact of the COVID-19 pandemic
 
-Due to the COVID-19 pandemic, data collection for the CHS moved from face-to-face interviewing to telephone mode in March 2020. This required a reduction in the number of questions in the overall questionnaire. While the Public Awareness and Trust in Official Statistics questions were unaltered, the change in data collection mode and the number of questions may have altered how people responded to the survey. In July 2022, face-to-face interviewing was reinstated alongside telephone interviewing, thus making the survey dual modality.
+Due to the COVID-19 pandemic, data collection for the CHS moved from face-to-face interviewing to telephone mode in March 2020. This required a reduction in the number of questions in the overall questionnaire. While the Public Awareness and Trust in Official Statistics questions were unaltered, the change in data collection mode and the number of questions may have altered how people responded to the survey. In July 2022, face-to-face interviewing was reinstated alongside telephone interviewing, thus making the survey dual modality. In 2023/24, interviewers were advised that face to face interviewing should be used where possible.
 
-The achieved response rate for the CHS was also lower than normal in 2020/21 (16% compared to 55%) and slightly lower than normal in 2021/22 (41%). As a result the 2020 Public Awareness and Trust in Official Statistics module ran for an additional three months (October 2020 to March 2021). While this has maintained the precision of the 2020 estimates and enabled comparisons with 2021 and other years in the time series, the timing of the 2020 module does not align as well with other years. The achieved response rate for the CHS in 2022/23 was 51%. More information is available on the [NISRA website](https://www.nisra.gov.uk/publications/chs-survey-documents).
+The achieved response rate for the CHS was also lower than normal in 2020/21 (16% compared to 55%) and slightly lower than normal in 2021/22 (41%). As a result the 2020 Public Awareness and Trust in Official Statistics module ran for an additional three months (October 2020 to March 2021). While this has maintained the precision of the 2020 estimates and enabled comparisons with 2021 and other years in the time series, the timing of the 2020 module does not align as well with other years. The achieved response rate for the CHS in 2023/24 was 50%. More information is available on the [NISRA website](https://www.nisra.gov.uk/publications/chs-survey-documents).
 
 ### Further Information
 

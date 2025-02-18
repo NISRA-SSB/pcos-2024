@@ -202,10 +202,6 @@ table_3.3a_data <- table_3.3a_data %>%
   mutate(current_year = c(
     trust_institutions_data$trust[trimws(trust_institutions_data$org) == "The NI Assembly/ Elected Bodies"],
     trust_institutions_data$distrust[trimws(trust_institutions_data$org) == "The NI Assembly/ Elected Bodies"],
-<<<<<<< HEAD
-=======
-    trust_institutions_data$dont_know[trimws(trust_institutions_data$org) == "The NI Assembly Elected Bodies"],
->>>>>>> e1b534a23bdcd7e37da613e2e2e95fc7a8ec1378
     trust_institutions_data$dont_know[trimws(trust_institutions_data$org) == "The NI Assembly/ Elected Bodies"],
     sum(!is.na(data_final$TrustAssemblyElectedBody2))
   ))

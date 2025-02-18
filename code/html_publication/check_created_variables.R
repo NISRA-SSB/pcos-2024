@@ -11,6 +11,7 @@ data_last <- readRDS(paste0(data_folder, "Final/PCOS ", current_year - 1, " Fina
 r <- 1
 
 recoded_vars <- c(new_q, "DERHIanalysis", "DERHI", "AGE2")
+recoded_vars <- recoded_vars[recoded_vars != c("TrustElectedRep2","TrustNIAssembly2")]
 
 for (i in 1:length(recoded_vars)) {
   frequency_table <- data_last %>%

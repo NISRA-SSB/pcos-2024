@@ -200,9 +200,9 @@ saveRDS(table_3.2a_data, paste0(data_folder, "Trend/", current_year, "/table_3.2
 
 table_3.3a_data <- table_3.3a_data %>%
   mutate(current_year = c(
-    trust_institutions_data$trust[trimws(trust_institutions_data$org) == "The NI Assembly"],
-    trust_institutions_data$distrust[trimws(trust_institutions_data$org) == "The NI Assembly"],
-    trust_institutions_data$dont_know[trimws(trust_institutions_data$org) == "The NI Assembly"],
+    trust_institutions_data$trust[trimws(trust_institutions_data$org) == "The NI Assembly/ Elected Bodies"],
+    trust_institutions_data$distrust[trimws(trust_institutions_data$org) == "The NI Assembly/ Elected Bodies"],
+    trust_institutions_data$dont_know[trimws(trust_institutions_data$org) == "The NI Assembly/ Elected Bodies"],
     sum(!is.na(data_final$TrustAssemblyElectedBody2))
   ))
 

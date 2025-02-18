@@ -333,7 +333,7 @@ f_worksheet(wb,
     list(
       data = table_3.3a_data,
       title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]"),
-      note = "Note 2: In 2019 and 2023, respondents were asked whether they trusted elected bodies, such as the NI Assembly or UK Parliament as the NI Assembly was suspended at this time."
+      note = "Note 2: In 2019 and 2023, respondents were asked whether they trusted elected bodies such as the NI Assembly or UK Parliament, as the NI Assembly was suspended at this time."
     )
   )
 )

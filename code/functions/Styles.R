@@ -1,4 +1,10 @@
 # Styles for Page titles
+pt_intro <- createStyle(
+  textDecoration = "bold",
+  fontSize = 15,
+  valign = "bottom"
+)
+
 pt <- createStyle(
   textDecoration = "bold",
   fontSize = 15,

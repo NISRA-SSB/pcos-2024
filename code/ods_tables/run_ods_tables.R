@@ -303,7 +303,7 @@ f_worksheet(wb,
 f_worksheet(wb,
   sheet_name = "Trust_Civil_Service",
   contents = "Trust in the Civil Service",
-  title = "Qu 3.2: For each institution, please indicate whether you tend to trust it or tend not to trust it - The Civil Service?",
+  title = "Qu 3.2: For each institution, please indicate whether you tend to trust it or tend not to trust it - the Civil Service?",
   outlining = "outlining trust in the Civil Service.",
   tables = list(
     list(
@@ -317,35 +317,45 @@ f_worksheet(wb,
 
 # Note: If this is using the TrustElectedRep2 variable the "Note 2" text will automatically be applied to variable label.
 #       However, the "note" text below will need updated manually.
-#OTHER UPDATES:
-#sheet_name = "Trust_NI_Assembly" OR sheet_name = "Trust_Elected_Bodies"
+#OTHER UPDATES to f_worksheet:
+#sheet_name = "Trust_NI_Assembly" OR sheet_name = "Trust_NIAssem_ElectBodies"
 #contents = "Trust in the Northern Ireland Assembly" OR contents = "Trust in the Northern Ireland Assembly/ Elected Bodies"
 #title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - The NI Assembly?"
 # OR title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - elected bodies such as the NI Assembly or UK Parliament?"
-#outlining = "outlining trust in the Northern Ireland Assembly." OR outlining = "outlining trust in the Northern Ireland Assembly/ Elected Bodies."
-#title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]")
-# OR title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly/ Elected Bodies, 2014 to ", current_year, " [Note 2]")
+#outlining = "outlining trust in the Northern Ireland Assembly." OR outlining = "outlining trust in the Northern Ireland Assembly, except for 2019 and 2023 when the question related to Elected Bodies"
 
 f_worksheet(wb,
-  sheet_name = "Trust_Elected_Bodies",
-  contents = "Trust in the Northern Ireland Assembly/ Elected Bodies.",
+  sheet_name = "Trust_NIAssem_ElectBodies",
+  contents = "Trust in the Northern Ireland Assembly/ Elected Bodies",
   title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - elected bodies such as the NI Assembly or UK Parliament?",
-  outlining = "outlining trust in the Northern Ireland Assembly/ Elected Bodies",
+  outlining = "outlining trust in the Northern Ireland Assembly, except for 2019 and 2023, when the question related to Elected Bodies",
   tables = list(
     list(
       data = table_3.3a_data,
-      title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly/ Elected Bodies, 2014 to ", current_year, " [Note 2]"),
+      title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]"),
       note = "Note 2: In 2019 and 2023, respondents were asked whether they trusted elected bodies, such as the NI Assembly or UK Parliament as the NI Assembly was suspended at this time."
     )
   )
 )
+
+#only applied if using TrustElectedRep2 variable.
+
+if (trust_body_var == "TrustElectedRep2") {
+cr <<- cr - 1
+table_title <- paste0("Table 3.3a: Trust in the Northern Ireland Assembly/ Elected Bodies, 2014 to ", current_year)
+sheet_name = "Trust_NIAssem_ElectBodies"
+writeFormula(wb, "Contents",
+             x = makeHyperlinkString(sheet = sheet_name, row = 3, col = 1, text = table_title),
+             startRow = cr)
+cr <<- cr + 1
+}
 
 ## Trust in the Media ####
 
 f_worksheet(wb,
   sheet_name = "Trust_Media",
   contents = "Trust in the Media",
-  title = "Qu 3.4: For each institution, please indicate whether you tend to trust it or tend not to trust it - The Media?",
+  title = "Qu 3.4: For each institution, please indicate whether you tend to trust it or tend not to trust it - the Media?",
   outlining = "outlining trust in the media",
   tables = list(
     list(
@@ -370,7 +380,7 @@ f_worksheet(wb,
     list(
       data = table_4b_data,
       title = if (current_year == ons_year) {
-        paste0("Table 4b: Trust in NISRA statistics and ONS statistics, ", current_year, ")")
+        paste0("Table 4b: Trust in NISRA statistics and ONS statistics, ", current_year)
       } else {
         paste0("Table 4b: Trust in NISRA statistics (", current_year, ") and ONS statistics (", ons_year, ")")
       }
@@ -428,10 +438,10 @@ f_worksheet(wb,
     list(
       data = table_6b_data,
       title = if (current_year == ons_year) {
-        paste0("Table 6b: Statistics produced are free from political interference (NISRA and ONS) , ", current_year)
+        paste0("Table 6b: Statistics produced are free from political interference (NISRA and ONS), ", current_year)
       } else {
         paste0("Table 6b: Statistics produced are free from political interference (NISRA ", current_year, " and ONS ", ons_year, ")")
-      }
+             }
     )
   )
 )

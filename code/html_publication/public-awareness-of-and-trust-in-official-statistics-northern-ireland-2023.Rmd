@@ -488,7 +488,7 @@ f_stacked_bar_vertical(trust_stats_nisra_ons_data)
 
 f_embed_ods(df = table_4b_data,
   sheet_title = if (current_year == ons_year) {
-    paste0("Table 4b: Trust in NISRA statistics and ONS statistics, ", current_year,")" )
+    paste0("Table 4b: Trust in NISRA statistics and ONS statistics, ", current_year )
   } else {
     paste0("Table 4b: Trust in NISRA statistics (", current_year, ") and ONS statistics (", ons_year,")")
   }, 

@@ -44,7 +44,7 @@ This is according to the latest findings from the ‘Public Awareness of and Tru
 The report shows the `r f_red_text("majority")` of respondents (`r trust_in_nisra_stats`%), surveyed in `r survey_start_mth` to `r survey_end_mth` `r current_year`, trust NISRA statistics a great deal or tend to trust them. The level of trust in NISRA statistics `r f_red_text("increases")` to (`r heard_of_and_trust_nisra_stats`%) for those respondents who have heard of NISRA by name.
 
 \
-Trust in NISRA as the body which produces official statistics is `r f_red_text("also high")`, with (`r trust_in_nisra`%) of respondents trusting NISRA a great deal or tending to trust NISRA; this `r f_red_text("remains higher than in 2019 (80%)")`, prior to the onset of the COVID-19 pandemic. Trust in NISRA is `r f_red_text("also higher")` than trust in the Civil Service (`r trust_in_nics`%) and compares `r f_red_text("favourably")` with trust in the media (`r trust_in_media`%) and the NI Assembly (`r trust_in_assembly`%).
+Trust in NISRA as the body which produces official statistics is `r f_red_text("also high")`, with (`r trust_in_nisra`%) of respondents trusting NISRA a great deal or tending to trust NISRA; this `r f_red_text("remains higher than in 2019 (80%)")`, prior to the onset of the COVID-19 pandemic. Trust in NISRA is `r f_red_text("also higher")` than trust in the Civil Service (`r trust_in_nics`%) and compares `r f_red_text("favourably")` with trust in the media (`r trust_in_media`%) and the NI Assembly (`r trust_in_assem_elect_body`%).
 
 \
 Other key findings are as follows:

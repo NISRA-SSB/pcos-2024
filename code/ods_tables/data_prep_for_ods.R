@@ -198,22 +198,28 @@ saveRDS(table_3.2a_data, paste0(data_folder, "Trend/", current_year, "/table_3.2
 
 ## Table 3.3: Trust in Northern Ireland Assembly by year ####
 
+if (trust_body_var == "TrustElectedRep2") {
+  AssemblyElectedBody_name = "Elected Bodies"
+} else {
+  AssemblyElectedBody_name = "The NI Assembly"
+} 
+
 table_3.3a_data <- table_3.3a_data %>%
   mutate(current_year = c(
-    trust_institutions_data$trust[trimws(trust_institutions_data$org) == "The NI Assembly"],
-    trust_institutions_data$distrust[trimws(trust_institutions_data$org) == "The NI Assembly"],
-    trust_institutions_data$dont_know[trimws(trust_institutions_data$org) == "The NI Assembly"],
+    trust_institutions_data$trust[trimws(trust_institutions_data$org) == AssemblyElectedBody_name],
+    trust_institutions_data$distrust[trimws(trust_institutions_data$org) == AssemblyElectedBody_name],
+    trust_institutions_data$dont_know[trimws(trust_institutions_data$org) == AssemblyElectedBody_name],
     sum(!is.na(data_final$TrustAssemblyElectedBody2))
   ))
 
-#The code below commented out added [Note 2] to the year in the table
+#The code below adds [Note 2] to the year in the table - commented out
 
  names(table_3.3a_data)[names(table_3.3a_data) == "current_year"] <-
-#  if (trust_body_var == "TrustElectedRep2") {
-#    paste0(current_year, " [Note 2]")
-#  } else {
+#if (trust_body_var == "TrustElectedRep2") {
+#   paste0(current_year, " [Note 2]")
+#} else {
    current_year
-#  }
+#}
 
 saveRDS(table_3.3a_data, paste0(data_folder, "Trend/", current_year, "/table_3.3a_data.RDS"))
 

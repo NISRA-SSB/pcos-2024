@@ -1,6 +1,9 @@
 # Select all and Ctrl + Enter to produce infographics
 # Before doing so fix years in ONS v NISRA charts in infographic prep. R 
 # Trust chart 4 and Awareness chart 3
+# Check Alt text in trust2alt, trust3alt, trust4alt, info2alt, info3alt
+# Check ggtitle in 'Trust in NISRA'; subtitle in 'Personal information provided to NISRA will be kept confidential'
+# Check caption_1 and caption_2 in 'Bubble chart'
 
 library(here)
 source(paste0(here(), "/code/infographic/infographic prep.R"))
@@ -291,7 +294,12 @@ overview4alt <- paste0(
 
 ## Trust in NISRA compared to other institutions ####
 
-bar_order <- c("The NI Assembly ", "The Civil Service ", "The media ", "NISRA ")
+if (trust_body_var == "TrustElectedRep2") {
+  AssemblyElectedBody_name = "Elected Bodies"
+} else {
+  AssemblyElectedBody_name = "The NI Assembly"
+}
+bar_order <- c(paste0(AssemblyElectedBody_name," "), "The Civil Service ", "The media ", "NISRA ")
 
 aware_trust_chart_5 <- ggplot(
   trust_compared_df,
@@ -355,8 +363,8 @@ overview5alt <- paste0(
   trust_compared_df$Percentage[trust_compared_df$Institution == "The media " & trust_compared_df$Category == "Tend to trust/trust a great deal"],
   "%; trust in the Civil Serice was ",
   trust_compared_df$Percentage[trust_compared_df$Institution == "The Civil Service " & trust_compared_df$Category == "Tend to trust/trust a great deal"],
-  "% and trust in the NI Assembly was ",
-  trust_compared_df$Percentage[trust_compared_df$Institution == "The NI Assembly " & trust_compared_df$Category == "Tend to trust/trust a great deal"],
+  "% and trust in the ", AssemblyElectedBody_name, " was ",
+  trust_compared_df$Percentage[trust_compared_df$Institution == AssemblyElectedBody_name & trust_compared_df$Category == "Tend to trust/trust a great deal"],
   "%."
 )
 
@@ -455,7 +463,7 @@ trust_chart_2 <- ggplot(trust_info_data2, aes(Year, `Percentage\n`, color = Cate
     limits = c(0, 100),
     breaks = seq(0, 100, by = 10)
   ) +
-  ggtitle(label = bquote("Trust in NISRA" ~ bold("remains high at") ~ bold(.(title_perc)))) +
+  ggtitle(label = bquote("Trust in NISRA statistics" ~ bold("remains high at") ~ bold(.(title_perc)))) +
   geom_text(aes(label = paste0(round_half_up(`Percentage\n`), "%")),
             vjust = 2,
             size = 8,
@@ -768,7 +776,7 @@ caption_1 <- ggplot() +
   annotate("text",
     x = 0,
     y = 0,
-    label = bquote(bold("Awareness of NISRA") ~ is ~ bold(.(current_trend)) ~ "than in" ~ .(current_trend_years) ~ "but"),
+    label = bquote(bold("Awareness of NISRA") ~ is ~ bold(.(current_trend)) ~ "from" ~ .(current_trend_years) ~ "but"),
     color = "#747474",
     size = 3
   ) +
@@ -779,7 +787,8 @@ caption_2 <- ggplot() +
   annotate("text",
     x = 0,
     y = 0,
-    label = bquote(bold(.(previous_trend)) ~ "than in previous years."),
+  #  label = bquote(bold(.(previous_trend)) ~ "than in previous years."),
+  label = bquote(bold(.(previous_trend)) ~ "than in 2020 and 2021."),
     color = "#747474",
     size = 3
   ) +
@@ -890,7 +899,7 @@ print(bubble_chart)
 dev.off()
 
 info2alt <- paste0(
-  "Awareness of NISRA is significantly lower than in 2020 and 2021, but significantly higher than in previous years. 2016 - 33%. 2018 - 35%. 2019 - 35%. 2020 - 58%. 2021 - 55%. ",
+  "Awareness of NISRA is not significantly different from 2022, but significantly lower than in 2020 and 2021. 2016 - 33%. 2018 - 35%. 2019 - 35%. 2020 - 58%. 2021 - 55%. 2022 - 49%.",
   current_year, " - ",
   awareness_info_data1$Percentage[awareness_info_data1$Year == current_year], "%."
 )

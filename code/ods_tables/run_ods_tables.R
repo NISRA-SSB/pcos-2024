@@ -145,7 +145,7 @@ f_worksheet(wb,
   tables = list(
     list(
       data = table_1a_data,
-      title = paste0("Table 1a: Awareness of NISRA, 2009 to ", current_year),
+      title = paste0("Table 1a: Awareness of NISRA, 2009 to ", current_year, " [Note 1]"),
       note = "Note 1: The percentages for 2009 and 2010 are rounded figures"
     ),
     list(
@@ -428,8 +428,8 @@ f_worksheet(wb,
 f_worksheet(wb,
   sheet_name = "Political_Interference",
   contents = "Political Interference",
-  title = "Qu 6: Statistics produced by NISRA are free from political interference",
-  outlining = "which outline agreement with the belief that statistics produced by NISRA are free from political interference.",
+  title = "Qu 6: I believe that the statistics produced by NISRA are free from political interference",
+  outlining = "which concern the belief that statistics produced by NISRA are free from political interference.",
   tables = list(
     list(
       data = table_6a_data,
@@ -451,8 +451,8 @@ f_worksheet(wb,
 f_worksheet(wb,
   sheet_name = "Confidentiality",
   contents = "Confidentiality",
-  title = "Qu 7: I believe that personal information provided to NISRA will be kept confidential",
-  outlining = "which concern belief that statistics provided to NISRA will be kept confidential.",
+  title = "Qu 7: I believe that personal information that is provided to NISRA will be kept confidential",
+  outlining = "which concern belief that personal information provided to NISRA will be kept confidential.",
   tables = list(
     list(
       data = table_7a_data,

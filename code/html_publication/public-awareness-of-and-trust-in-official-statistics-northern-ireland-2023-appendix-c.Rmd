@@ -28,6 +28,8 @@ knitr::opts_chunk$set(
 
 library(here)
 source(paste0(here(), "/code/html_publication/data_prep.R"))
+
+#check and edit Qu3a below to match NI Assembly/ Elected Bodies question
 ```
 
 ```{css}
@@ -119,9 +121,9 @@ How much do you trust the Civil Service?
 1. Tend to distrust
 1. Distrust greatly
 
-#### Qu 3a: Trust NI Assembly
+#### Qu 3a: Trust elected bodies
 
-How much do you trust the NI Assembly?
+How much do you trust elected bodies such as the NI Assembly or UK Parliament?
 
 1. Trust a great deal
 1. Tend to trust

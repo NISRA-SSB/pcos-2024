@@ -312,10 +312,15 @@ trust_nisra_ons_data <- trust_nisra_data %>%
 
 ## Chart 7: Trust in institutions ####
 
-trust_institutions_data <-
+if (trust_body_var == "TrustElectedRep2") {
+  AssemblyElectedBody_name = "Elected Bodies"
+} else {
+  AssemblyElectedBody_name = "The NI Assembly"
+}  
+  trust_institutions_data <-
   rbind(
     data.frame(
-      org = c("The NI Assembly", "The Civil Service", "The media"),
+      org = c(AssemblyElectedBody_name, "The Civil Service", "The media"),
       trust = c(
         f_return_p(data_final, "TrustAssemblyElectedBody2", "Trust a great deal/Tend to trust") * 100,
         f_return_p(data_final, "TrustCivilService2", "Trust a great deal/Tend to trust") * 100,
@@ -564,7 +569,7 @@ heard_of_and_trust_nisra <- round_half_up(f_return_p_group(data_final, "TrustNIS
 
 trust_in_ons <- round_half_up(trust_nisra_ons_data$trust[grepl("ONS", trust_nisra_ons_data$org)])
 trust_in_media <- round_half_up(trust_institutions_data$trust[grepl("The media", trust_institutions_data$org)])
-trust_in_assembly <- round_half_up(trust_institutions_data$trust[grepl("Assembly", trust_institutions_data$org)])
+trust_in_assem_elect_body <- round_half_up(trust_institutions_data$trust[grepl(AssemblyElectedBody_name, trust_institutions_data$org)])
 trust_in_nics <- round_half_up(trust_institutions_data$trust[grepl("Civil Service", trust_institutions_data$org)])
 
 

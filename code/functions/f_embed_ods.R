@@ -3,7 +3,8 @@ f_embed_ods <- function(df, sheet_title, tab_name, app_b = FALSE) {
     dir.create(paste0(here(), "/outputs/table_data"))
   }
 
-
+  #note that worksheet contains one table removed, see #'s below
+  
   wb <- createWorkbook(
     creator = "NISRA Statistical Support Branch",
     title = sheet_title,
@@ -17,9 +18,11 @@ f_embed_ods <- function(df, sheet_title, tab_name, app_b = FALSE) {
 
   writeData(
     wb, tab_name,
-    c(sheet_title, "This worksheet contains one table.")
+    c(sheet_title)
+ # c(sheet_title, "This worksheet contains one table.")
   )
 
+  setRowHeights(wb, tab_name, rows = 1, heights = 30)
   addStyle(wb, tab_name,
     style = pt,
     rows = 1,
@@ -28,7 +31,8 @@ f_embed_ods <- function(df, sheet_title, tab_name, app_b = FALSE) {
 
   writeDataTable(wb, tab_name,
     df,
-    startRow = 3,
+#   startRow = 3,
+    startRow = 2,
     tableStyle = "none",
     withFilter = FALSE,
     tableName = tab_name,
@@ -37,7 +41,8 @@ f_embed_ods <- function(df, sheet_title, tab_name, app_b = FALSE) {
     na.string = "No data"
   )
   
-  r = 3
+# r = 3
+  r = 2
   
   addStyle(wb, tab_name,
            rows = r,
@@ -101,6 +106,12 @@ f_embed_ods <- function(df, sheet_title, tab_name, app_b = FALSE) {
 
   unlink(xl_name)
 
+  sheet_title <- if (grepl("\\[Note", sheet_title)) {
+    sub(" \\[.*", "", sheet_title)
+  } else {
+    sheet_title
+  }
+  
   if (app_b) {
     paste0(sheet_title, " (", embed_file(ods_name, text = ".ODS format"), "; ", ods_size, ")")
   } else {

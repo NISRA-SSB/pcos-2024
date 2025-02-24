@@ -128,7 +128,7 @@ f_trust_instiutions <- function(title, tables) {
     widths = c(27, rep(12, ncol(tables[[1]]$data) - 1))
   )
 
-  xl_name <- paste0(here(), "/outputs/table_data/Trust_in_institutions_", current_year, ".xlsx")
+  xl_name <- paste0(here(), "/outputs/table_data/Trust_in_institutions_2014_to_", current_year, ".xlsx")
   ods_name <- gsub(".xlsx", ".ods", xl_name)
 
   saveWorkbook(wb, xl_name, overwrite = TRUE)

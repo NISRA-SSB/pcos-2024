@@ -43,7 +43,7 @@ The report is structured around the five quality dimensions for statistical outp
 
 ## Introduction
 
-The Public Awareness of and Trust in Official Statistics publication, produced by Northern Ireland Statistics and Research Agency (NISRA) Statistical Support Branch (SSB), presents findings on public awareness of NISRA and trust in official statistics in Northern Ireland. It examines changes over time. 
+The Public Awareness of and Trust in Official Statistics publication, produced by Northern Ireland Statistics and Research Agency (NISRA) Statistical Support Branch (SSB), presents findings on public awareness of NISRA and trust in official statistics in Northern Ireland, and examines changes over time. 
 
 The report also presents findings on trust in NISRA as an institution, compared to the Civil Service, the media and the NI Assembly (or elected bodies, such as the NI Assembly or UK Parliament). Information on the public’s opinion on the importance of NISRA statistics in understanding Northern Ireland is also included, as well as the public’s view on political interference and confidentiality. 
 
@@ -53,7 +53,7 @@ Following the initial release in 2009, the report was produced biennially until 
 
 Prior to 2018, the survey was included as a module within the NI Omnibus Survey. In 2018, the module moved to the [Continuous Household Survey](https://www.nisra.gov.uk/statistics/find-your-survey/continuous-household-survey) (CHS) due to the suspension of the NI Omnibus Survey. From 2014, the questions have been asked in the Autumn of the year.
 
-The CHS is one of the largest continuous surveys carried out in Northern Ireland, designed and administered by the Central Survey Unit (CSU), NISRA. It is based on a representative sample of the general population, aged 16 and over, resident in private households. Prior to the COVID-19 pandemic, the CHS was based exclusively on face-to-face interviews carried out using computer-assisted personal interviewing (CAPI) where interviewers record responses to the questionnaire on tablets. During the pandemic, data collection switched to computer-assisted telephone interviewing (CATI). In July 2022, face-to-face interviewing was reinstated alongside telephone interviewing, thus making the 2022/23 CHS dual modality. This dual-mode approach continued throughout 2023/24, however, intereviewers were advised that face to face interviewing should be used where possible. Interviews are spread over the 12 months from April to March, with the ‘Public Awareness and Trust in Official Statistics’ module included from `r survey_start_mth` to `r survey_end_mth` in `r current_year`.
+The CHS is one of the largest continuous surveys carried out in Northern Ireland, designed and administered by the Central Survey Unit (CSU), NISRA. It is based on a representative sample of the general population, aged 16 and over, resident in private households. Prior to the COVID-19 pandemic, the CHS was based exclusively on face-to-face interviews carried out using computer-assisted personal interviewing (CAPI) where interviewers record responses to the questionnaire on tablets. During the pandemic, data collection switched to computer-assisted telephone interviewing (CATI). In July 2022, face-to-face interviewing was reinstated alongside telephone interviewing, thus making the 2022/23 CHS dual modality. This dual-mode approach continued throughout 2023/24, however, interviewers were advised that face to face interviewing should be used where possible. Interviews are spread over the 12 months from April to March, with the ‘Public Awareness and Trust in Official Statistics’ module included from `r survey_start_mth` to `r survey_end_mth` in `r current_year`.
 
 The data are used to monitor and report on awareness of NISRA, trust in NI official statistics and NISRA, as well as the public’s view on the value of official statistics, freedom from political interference and data confidentiality. This reflects the Trustworthiness, Quality and Value pillars of the [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/the-code/), which all official statistics and producers of official statistics must be compliant with. 
 
@@ -77,7 +77,7 @@ The Code explicitly states that “Those producing and releasing statistics shou
 
 Comparisons are made with other institutions (the Civil Service, the media and the NI Assembly) and the Office for National Statistics (ONS), the largest producer of UK statistics, where there are appropriate data to do so.
 
-A core set of questions have been included in each survey (since 2014) allowing trends to be monitored over time. Questions have been aligned with the equivalent survey carried out by the Office of National Statistics ([Public Confidence in Official Statistics](https://natcen.ac.uk/publications/public-confidence-official-statistics) and the OECD Committee for Statistics recommendations on ([Measuring Trust in Official Statistics](https://web-archive.oecd.org/2012-06-14/58409-modelsurveyquestionnaireonmeasuringtrustinofficialstatistics.htm)).
+A core set of questions have been included in each survey (since 2014) allowing trends to be monitored over time. Questions have been aligned with the equivalent survey carried out by the Office of National Statistics ([Public Confidence in Official Statistics](https://natcen.ac.uk/publications/public-confidence-official-statistics) and the OECD Committee for Statistics recommendations on [Measuring Trust in Official Statistics](https://web-archive.oecd.org/2012-06-14/58409-modelsurveyquestionnaireonmeasuringtrustinofficialstatistics.htm).
 
 Consultation is carried out prior to each run of the survey with key users to agree the questions to be included and to ensure they continue to cover the main requirements for users.
 
@@ -123,7 +123,7 @@ On receipt of CHS data, SSB statisticians validate and perform checks on the dat
 
 Because CHS data are based on a representative sample rather than the whole population they are subject to sampling error. Sampling error is the difference between the estimate derived from a sample and the 'true' value that would result if a census of the whole population were taken under the same conditions. 
 
-Significance tests are carried out to determine if the observed differences in the responses given by various respondent groups are likely to be real differences or due to sampling error. Any statements in the report regarding changes over time or differences between responses are statistically significant at the 95% confidence level. This means that we can be 95% confident that the differences are actual differences and have not just arisen by chance.
+Significance tests are carried out to determine if the observed differences in the responses given by various respondent groups are likely to be real differences or due to sampling error. Any statements in the report regarding changes over time or other differences are statistically significant at the 95% confidence level. This means that we can be 95% confident that the differences are actual differences and have not just arisen by chance.
 
 ## Timeliness and Punctuality
 
@@ -133,7 +133,7 @@ The ‘Public Awareness of and Trust in Official Statistics’ survey questions 
 
 The delay is primarily due to the need to wait until three months after the end of the CHS survey cycle (which runs to March) for the validation of the explanatory variables to be completed and the weights produced based on the previous year’s population estimates which are usually published towards the end of June. The data are provided to SSB in mid-July and the reported is published in September/ October. For the 2023 run of the survey, the report was delayed until February 2025 due to resourcing issues.
 
-Publication dates are pre-announced at least four weeks in advance (where possible) in the official statistics publication calendar on gov.uk and also on the ‘Public Awareness of and Confidence (Trust) in Official Statistics (PCOS)’ page on the NISRA website. 
+Publication dates are pre-announced at least four weeks in advance (where possible) in the [official statistics publication calendar on gov.uk](https://www.gov.uk/search/research-and-statistics?content_store_document_type=upcoming_statistics&order=updated-newest) and also on the [‘Public Awareness of and Confidence (Trust) in Official Statistics (PCOS)’ page](https://www.nisra.gov.uk/statistics/government/public-awareness-and-confidence-trust-official-statistics-pcos) on the NISRA website. 
 
 All the reports have been published on their planned publication dates, apart from the 2019 report, which was delayed by eight days to allow additional time for quality assurance. Any change to the pre-announced date is notified on both gov.uk and the NISRA website, including an explanation of the reason for the change.
 
@@ -163,11 +163,11 @@ In addition, the data from the CHS are available on the [UK Data Service](https:
 
 A core set of questions have been included in the survey (since 2014) allowing trends to be monitored over time. These are awareness of NISRA (which has been asked since the first run of the survey in 2009), trust in NISRA, trust in the Civil Service, trust in the media, trust in the NI assembly/ elected bodies, trust in NISRA statistics, political interference and data confidentiality, with the value question, i.e. the importance of NISRA statistics, introduced in 2016. The change in the wording of the NI assembly/ elected bodies question in 2019 and 2023 reflected the collapse of the NI assembly in 2017 and 2022, and feedback from respondents (in 2018) who queried the relevance of a question about a body that wasn’t sitting.  The questions on respondent’s awareness of specified NISRA official statistics have been included since 2020. Questions on awareness of NISRA statistics were previously asked between 2009 and 2016. 
 
-For each of the key indicators (Awareness, Trust in NISRA, Trust in NISRA Statistics, Value, Political Interference and Confidentiality) the publication includes a comparison over time.
+For each of the key indicators (Awareness, Trust in NISRA, Trust in NISRA Statistics, Value, Political Interference and Confidentiality) the publication includes a comparison over time. Trust in NISRA as an institution is also compared with other institutions (the Civil Service, the media and the NI Assembly).
 
-Trust in NISRA as an institution is compared with other institutions (the Civil Service, the media and the NI Assembly).
+Prior to the 2023 survey results, the official statistics releases included analyses by age, employment status and highest qualification level for some of all of the key variables (Awareness, Trust in NISRA, Trust in NISRA Statistics, Value, Political Interference and Confidentiality). However, these analyses showed few significant findings, and therefore were of limited benefit. It was also apparent that much of the variation in the ‘agree’ and ‘disagree’ results for these subgroups was due to variation in the ‘don’t knows’. In order to focus on the most useful analyses, and reduce the time taken to produce the report, these analyses are no longer included.
 
-Significance tests are carried out to determine if the observed differences in the responses given by various respondent groups are likely to be real differences or due to sampling error. Any statements in the report regarding changes over time or differences between responses are statistically significant at the 95% confidence level. This means that we can be 95% confident that the differences are actual differences and have not just arisen by chance.
+Significance tests are carried out to determine if the observed differences in the responses given by various respondent groups are likely to be real differences or due to sampling error. Any statements in the report regarding changes over time or other differences are statistically significant at the 95% confidence level. This means that we can be 95% confident that the differences are actual differences and have not just arisen by chance.
 
 A similar survey ([Public Confidence in Official Statistics](https://natcen.ac.uk/publications/public-confidence-official-statistics/)) is carried out by NatCen on behalf of the Office for National Statistics (ONS), the largest producer of UK official statistics. Where an equivalent question is asked and reported on in both surveys, the wording and response categories are aligned allowing comparisons to be made between NISRA and ONS. The Awareness of ONS/NISRA, Trust in ONS/NISRA, Trust in ONS/NISRA statistics, value, political interference and confidentiality questions are asked in both surveys. 
 
@@ -207,6 +207,8 @@ Contact details for the responsible statistician have been provided in the repor
 
 In 2020, the last year for which data are available, the CHS module took on average 3 minutes to complete. In this year, there were two additional questions asked of some respondents, so it is likely that the completion time for the module in 2023 was similar or slightly less.
 
+Prior to the 2023 survey results, the releases included analyses by age, employment status and highest qualification level for some, or all of the key variables. However, these analyses showed few significant findings, and therefore were of limited benefit. It was also apparent that much of the variation in the ‘agree’ and ‘disagree’ results for these subgroups was due to variation in the ‘don’t knows’. In order to focus on the most useful analyses, and reduce the time taken to produce the report, these analyses are no longer included. This increases the feasibility of continuing to produce an annual report, which allows changes over time to be monitored more easily and increases the relevance of the results.
+
 ## Confidentiality, Transparency and Security
 
 <span style = "color: #1460aa">The procedures and policy used to ensure sound confidentiality, security and transparent practices.</span>
@@ -215,7 +217,6 @@ The CHS data received by SSB are anonymised (name/address information removed). 
 
 Responses are presented as weighted percentages and there is no additional detail that would enable respondents to be identified.
     
-### space###
 
 Document last updated: `r month.name[month(today())]` `r year(today())`
 

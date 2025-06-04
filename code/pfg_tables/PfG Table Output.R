@@ -1,6 +1,11 @@
 library(here)
 source(paste0(here(), "/code/config.R"))
 source(paste0(here(), "/code/pfg_tables/Historic Data to R.R"))
+
+if (!dir.exists(paste0(here(), "/outputs/PfG"))) {
+  dir.create(paste0(here(), "/outputs/PfG"))
+}
+
 wb <- createWorkbook()
 
 # Define all available years based on current_year value from config ####
@@ -309,7 +314,7 @@ for (question in questions) {
   )
 }
 
-xl_filename <- paste0(here(), "/outputs/PfG - Equality Groups Data ", current_year, ".xlsx")
+xl_filename <- paste0(here(), "/outputs/PfG/PfG - Equality Groups Data ", current_year, ".xlsx")
 
 saveWorkbook(wb, xl_filename, overwrite = TRUE)
 

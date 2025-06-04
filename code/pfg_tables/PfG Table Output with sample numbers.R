@@ -1,6 +1,11 @@
 library(here)
 source(paste0(here(), "/code/config.R"))
 source(paste0(here(), "/code/pfg_tables/Historic Data to R.R"))
+
+if (!dir.exists(paste0(here(), "/outputs/PfG"))) {
+  dir.create(paste0(here(), "/outputs/PfG"))
+}
+
 wb <- createWorkbook()
 
 # Define all available years based on current_year value from config ####
@@ -353,7 +358,7 @@ for (question in questions) {
                widths = c(22.86, 14.14, 12.86, 52.43, 10.14, 10.14, 10.71)
   )
   
-  n_sheet <- paste(substr(question, 1, 19), "(NUM)")
+  n_sheet <- paste(substr(question, 1, 19), "(SAMPLENUM)")
   
   addWorksheet(wb, n_sheet, tabColour = "#d3d3d3")
   
@@ -377,7 +382,7 @@ for (question in questions) {
   
 }
 
-xl_filename <- paste0(here(), "/outputs/PfG - Equality Groups Data with numbers ", current_year, ".xlsx")
+xl_filename <- paste0(here(), "/outputs/PfG/PfG - Equality Groups Data with sample numbers ", current_year, ".xlsx")
 
 saveWorkbook(wb, xl_filename, overwrite = TRUE)
 

@@ -27,6 +27,8 @@ eq_labels <- read.xlsx(
 
 for (question in questions) {
   ## Create template of data frame ####
+  
+  ### for % data
   question_data <- data.frame(STATISTIC = character()) %>%
     mutate(
       `TLIST(A1)` = numeric(),
@@ -37,6 +39,15 @@ for (question in questions) {
       `Upper limit` = numeric()
     )
 
+  ### for n data
+  question_n_data <- data.frame(STATISTIC = character()) %>%
+    mutate(
+      `TLIST(A1)` = numeric(),
+      EQUALGROUPS = character(),
+      `Variable name` = character(),
+      VALUE = numeric()
+    )
+  
   for (year in data_years) {
     ## Read data from Remote location ####
     data_year <- readRDS(paste0(data_folder, "Final/PCOS ", year, " Final Dataset.RDS"))
@@ -105,6 +116,7 @@ for (question in questions) {
 
       ### Write NI row for year as data frame ####
 
+      #### for % data
       ni_data <- data.frame(STATISTIC = character(1)) %>%
         mutate(
           `TLIST(A1)` = year,
@@ -114,11 +126,25 @@ for (question in questions) {
           VALUE = ni_value,
           `Upper limit` = ni_ci[["upper_cl"]] * 100
         )
+      
+      #### for n data
+      ni_n_data <- data.frame(STATISTIC = character(1)) %>%
+        mutate(
+          `TLIST(A1)` = year,
+          EQUALGROUPS = "N92000002",
+          `Variable name` = "Northern Ireland",
+          VALUE = ni_n
+        )  
 
       ### Append this row to question_data data frame ####
 
+      #### for % data
       question_data <- question_data %>%
         bind_rows(ni_data)
+      
+      #### for n data
+      question_n_data <- question_n_data %>%
+        bind_rows(ni_n_data)
 
       ### Loop through co-variates ####
 
@@ -229,6 +255,7 @@ for (question in questions) {
               ""
             }
 
+            #### for % data
             new_row <- data.frame(STATISTIC = character(1)) %>%
               mutate(
                 `TLIST(A1)` = year,
@@ -241,6 +268,18 @@ for (question in questions) {
 
             question_data <- question_data %>%
               bind_rows(new_row)
+            
+            #### for n data
+            new_n_row <- data.frame(STATISTIC = character(1)) %>%
+              mutate(
+                `TLIST(A1)` = year,
+                EQUALGROUPS = EQUALGROUP,
+                `Variable name` = co_val,
+                VALUE = n_value
+              )
+            
+            question_n_data <- question_n_data %>%
+              bind_rows(new_n_row)
           }
         }
       }
@@ -267,6 +306,12 @@ for (question in questions) {
     mutate(`Lower limit` = round_half_up(`Lower limit`, 1),
            VALUE = round_half_up(VALUE, 1),
            `Upper limit` = round_half_up(`Upper limit`, 1))
+  
+  question_n_data <- question_n_data %>%
+    mutate(`Variable name` = factor(`Variable name`,
+                                    levels = sort_order
+    )) %>%
+    arrange(`Variable name`, `TLIST(A1)`)
 
 
   ## Write to Excel ####
@@ -312,9 +357,32 @@ for (question in questions) {
                cols = 1:7,
                widths = c(22.86, 14.14, 12.86, 52.43, 10.14, 10.14, 10.71)
   )
+  
+  n_sheet <- paste(substr(question, 1, 19), "(SAMPLENUM)")
+  
+  addWorksheet(wb, n_sheet, tabColour = "#d3d3d3")
+  
+  writeDataTable(wb, n_sheet,
+                 x = question_n_data,
+                 tableStyle = "none",
+                 withFilter = FALSE
+  )
+  
+  addStyle(wb, n_sheet,
+           style = ns_n_pfg,
+           rows = 2:(nrow(question_n_data) + 1),
+           cols = 5:7,
+           gridExpand = TRUE
+  )
+  
+  setColWidths(wb, n_sheet,
+               cols = 1:7,
+               widths = c(22.86, 14.14, 12.86, 52.43, 10.14, 10.14, 10.71)
+  )
+  
 }
 
-xl_filename <- paste0(here(), "/outputs/PfG/PfG - Equality Groups Data ", current_year, ".xlsx")
+xl_filename <- paste0(here(), "/outputs/PfG/PfG - Equality Groups Data with sample numbers ", current_year, ".xlsx")
 
 saveWorkbook(wb, xl_filename, overwrite = TRUE)
 

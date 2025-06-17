@@ -189,3 +189,8 @@ ns_pfg <- createStyle(
   numFmt = "#,##0.0",
   halign = "center"
 )
+
+ns_n_pfg <- createStyle(
+  numFmt = "#,##0",
+  halign = "right"
+)

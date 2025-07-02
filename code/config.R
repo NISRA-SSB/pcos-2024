@@ -28,7 +28,7 @@ ons_filename <- "ONS PCOS Data - 2023.xlsx"
 # Set the report title and subtitle if required
 # THESE SHOULD BE UPDATED FOR EACH NEW PUBLICATION
 
-current_year <- 2023
+current_year <- 2024
 ons_year <- 2023
 
 survey_start_mth <- "September"
@@ -54,8 +54,8 @@ statistic_type <- "os" # options: as  (Accredited Official Statistics),
 
 # Set the report publication data and next publication data if required
 
-pub_date <- "27 February 2025"
-next_pub_date <- "10 June 2025"
+pub_date <- "30 June 2025"
+next_pub_date <- "10 June 2026"
 
 ##### CONTACT DETAILS #####
 # Set contact details for the report - these details will feed into the contact

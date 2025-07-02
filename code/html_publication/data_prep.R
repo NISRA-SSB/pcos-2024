@@ -84,8 +84,8 @@ data_final <- data_raw %>%
     remove = FALSE,
     AwareNISRA2 = factor(PCOS1, levels = setdiff(levels(PCOS1), "Refusal"), labels = gsub("DontKnow", "Don't know", setdiff(levels(PCOS1), "Refusal")))
   ) %>% ## Added for later
-  relocate("AGE2a", .after = "Age1") %>%
-  relocate("AGE2", .after = "W3")
+  relocate("AGE2", .after = "AGE") %>%
+  relocate("AGE2a", .after = "AGE2")
 
 attributes(data_final$AwareNISRA2)$label <- attributes(data_final$PCOS1)$label
 

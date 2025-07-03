@@ -1,5 +1,5 @@
 ---
-title: "Public Awareness Of And Trust In Official Statistics, Northern Ireland 2023"
+title: "Public Awareness Of And Trust In Official Statistics, Northern Ireland 2024"
 lang: "en"
 output:
   rmarkdown::html_document:

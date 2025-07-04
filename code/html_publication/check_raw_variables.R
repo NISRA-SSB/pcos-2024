@@ -3,6 +3,8 @@ saveRDS(data_raw, paste0(data_folder, "Raw/PCOS ", current_year, " Dataset.RDS")
 PCOS_vars <- c(names(data_raw)[grepl("PCOS", names(data_raw))], "DERHI", "EMPST2", "AGE")
 PCOS1c_vars <- names(data_raw)[grepl("PCOS1c", names(data_raw)) & names(data_raw) != "PCOS1c"]
 PCOS1d_vars <- names(data_raw)[grepl("PCOS1d", names(data_raw)) & names(data_raw) != "PCOS1d"]
+PCOS_vars <- PCOS_vars[PCOS_vars != c("PCOS1c")]
+PCOS_vars <- PCOS_vars[PCOS_vars != c("PCOS1d")]
 
 data_last <- readRDS(paste0(data_folder, "Raw/PCOS ", current_year - 1, " Dataset.RDS"))
 

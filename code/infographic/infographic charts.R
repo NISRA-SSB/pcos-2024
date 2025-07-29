@@ -776,7 +776,7 @@ caption_1 <- ggplot() +
   annotate("text",
     x = 0,
     y = 0,
-    label = bquote(bold("Awareness of NISRA") ~ is ~ bold(.(current_trend)) ~ "from" ~ .(current_trend_years) ~ "but"),
+    label = bquote(bold("Awareness of NISRA") ~ is ~ bold(.(current_trend)) ~ "from 2020 - 2023 but"),
     color = "#747474",
     size = 3
   ) +
@@ -788,7 +788,7 @@ caption_2 <- ggplot() +
     x = 0,
     y = 0,
   #  label = bquote(bold(.(previous_trend)) ~ "than in previous years."),
-  label = bquote(bold(.(previous_trend)) ~ "than in 2020 and 2021."),
+  label = bquote(bold(.(previous_trend)) ~ "than in 2019 and earlier years"),
     color = "#747474",
     size = 3
   ) +

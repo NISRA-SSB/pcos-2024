@@ -144,6 +144,7 @@ line_chart_df <- trust_info_data3
 
 # under filter V1, list any years with ONS data but without NISRA data (2018)
 # under filter Year, list any years with NISRA data but without ONS data (2019, 2020, 2022) - do not include current year
+# under tail, make sure number is correct number of columns
 
 trust_info_data4 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_4d_data.RDS")) %>%
   filter(Response == "Yes") %>%
@@ -183,6 +184,7 @@ if (current_year != ons_year) {
 
 # Awareness Infographic ####
 ## Chart 2 ####
+## double check if colours of bubbles and text need adjusted
 
 new_info_names <- c("Category", "Year", "Percentage")
 
@@ -202,11 +204,12 @@ awareness_info_data1 <- readRDS(paste0(data_folder, "Trend/", current_year, "/ta
       rank == 1 ~ "blue circle 1",
       rank == 2 ~ "blue circle 2",
       rank == 3 ~ "blue circle 3",
+      rank == 4 ~ "blue circle 2",
       rank == max(rank) ~ "green circle",
       TRUE ~ "blue circle 4"
     ),
     text_colour = case_when(
-      rank <= 3 ~ "#ffffff",
+      rank <= 4 ~ "#ffffff",
       TRUE ~ "#000000"
     ),
     #text_size = case_when(

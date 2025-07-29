@@ -284,7 +284,7 @@ f_extract_sheet(path = xl_filename,
 
 Respondents who had heard of NISRA were asked whether they were aware that NISRA produced certain statistics. Of these respondents, `r heard_aware_all`% were aware that NISRA produced all the listed statistics while `r heard_aware_none`% were unaware that NISRA produced any of the listed statistics. A more detailed breakdown is available in the accompanying tables (see [Appendix B](public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`-appendix-b.html)).
 
-Awareness was highest for the Northern Ireland Census (`r heard_aware_census`%), followed by statistics on the number of people who live in Northern Ireland (`r heard_aware_people`%), and the unemployment rate (57%). Statistics on  the percentage of journeys made by walking, cycling or public transport (`r heard_of_aware_cycling`%) were the least recognised as being produced by NISRA.
+Awareness was highest for the Northern Ireland Census (`r heard_aware_census`%), followed by statistics on the number of people who live in Northern Ireland (`r heard_aware_people`%), and the unemployment rate (`r heard_aware_unemployment`%). Statistics on  the percentage of journeys made by walking, cycling or public transport (`r heard_of_aware_cycling`%) were the least recognised as being produced by NISRA.
 
 #### Chart 4: Aware NISRA produces specific statistics for respondents who were aware of NISRA, `r current_year`
 
@@ -347,7 +347,7 @@ Trust in NISRA as an institution is high, with `r trust_in_nisra`% of all respon
 
 ### Comparison over time
 
-Trust in NISRA is lower in 2024 than in 2023 (83%). Since 2020 (during the COVID-19 pandemic), trust in NISRA has decreased from 90% to 79%, and the percentage of respondents answering 'don't know' has increased from 7% to 16%. The level of distrust in NISRA has also increased from 2% to 6%. Current trust levels are comparable to those recorded in 2019 and earlier years (Chart 5).
+Trust in NISRA is lower in 2024 than in 2023 (83%). Since 2020 (during the COVID-19 pandemic), trust in NISRA has decreased from 90% to `r trust_in_nisra`%, and the percentage of respondents answering 'don't know' has increased from 7% to `r dont_know_trust_nisra`%. The level of distrust in NISRA has also increased from 2% to `r distrust_nisra`%. Current trust levels are comparable to those recorded in 2019 and earlier years (Chart 5).
 
 #### Chart 5: Trust in NISRA (2014-`r current_year`)
 

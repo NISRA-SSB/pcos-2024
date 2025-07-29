@@ -1,6 +1,8 @@
 # Select all and Ctrl + Enter to produce infographics
 # Before doing so fix years in ONS v NISRA charts in infographic prep. R 
 # Trust chart 4 and Awareness chart 3
+# Check if colours in bubble chart need adjusted
+## below completed in infographic charts. R
 # Check Alt text in trust2alt, trust3alt, trust4alt, info2alt, info3alt
 # Check ggtitle in 'Trust in NISRA'; subtitle in 'Personal information provided to NISRA will be kept confidential'
 # Check caption_1 and caption_2 in 'Bubble chart'

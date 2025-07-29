@@ -156,7 +156,7 @@ trust_info_data4 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_
     Percentage = as.numeric(V1)
   ) %>%
   select(-V1) %>%
-  tail(4) %>%
+  tail(5) %>%
   bind_rows(trust_info_data2 %>%
     as.data.frame() %>%
     filter((Year != 2019) & (Year != 2020) & (Year != 2022)) %>%
@@ -165,7 +165,7 @@ trust_info_data4 <- readRDS(paste0(data_folder, "Trend/", current_year, "/table_
       Year = as.character((Year))
     ) %>%
     select(Organisation, Year, Percentage = `Percentage\n`) %>%
-    tail(4)) %>%
+    tail(5)) %>%
   arrange(Organisation)
 
 rownames(trust_info_data4) <- 1:nrow(trust_info_data4)
@@ -252,7 +252,8 @@ awareness_info_data2$year <- as.character(awareness_info_data2$year)
 awareness_info_data2 <- subset(awareness_info_data2, awareness_info_data2$year == "2016" |
   awareness_info_data2$year == "2018" |
   awareness_info_data2$year == "2021" |
-  awareness_info_data2$year == "2023")
+  awareness_info_data2$year == "2023" |
+  awareness_info_data2$year == "2024")
 awareness_info_data2 <- gather(awareness_info_data2, Group, Percentage, -`year`)
 awareness_info_data2$Percentage <- awareness_info_data2$Percentage
 awareness_info_data2$Group <- toupper(awareness_info_data2$Group)

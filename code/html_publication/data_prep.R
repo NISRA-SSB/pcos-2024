@@ -556,6 +556,7 @@ heard_aware_all <- round_half_up(f_return_p_group(data_final, "heard_aware_all",
 heard_aware_census <- round_half_up(aware_stats_by_nisra_data$yes[grepl("NI Census", aware_stats_by_nisra_data$output)])
 heard_aware_people <- round_half_up(aware_stats_by_nisra_data$yes[grepl("number of people", aware_stats_by_nisra_data$output)])
 heard_aware_deaths <- round_half_up(aware_stats_by_nisra_data$yes[grepl("deaths", aware_stats_by_nisra_data$output)])
+heard_aware_unemployment <- round_half_up(aware_stats_by_nisra_data$yes[grepl("unemployment", aware_stats_by_nisra_data$output)])
 heard_of_aware_qualifications <- round_half_up(aware_stats_by_nisra_data$yes[grepl("Qualifications", aware_stats_by_nisra_data$output)])
 heard_of_aware_poverty <- round_half_up(aware_stats_by_nisra_data$yes[grepl("poverty", aware_stats_by_nisra_data$output)])
 heard_of_aware_cycling <- round_half_up(aware_stats_by_nisra_data$yes[grepl("cycling", aware_stats_by_nisra_data$output)])

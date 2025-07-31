@@ -180,7 +180,7 @@ table_3.1c_data <- table_3.1b_data["Response (%)"] %>%
     )
   )
 
-# Trust Civil Service ####
+# Trust Institutions ####
 
 ## Table 3.2: Trust in Civil Service by year ####
 
@@ -212,13 +212,16 @@ table_3.3a_data <- table_3.3a_data %>%
     sum(!is.na(data_final$TrustAssemblyElectedBody2))
   ))
 
+#The code below removes [Note 2] from 2019
+names(table_3.3a_data)[names(table_3.3a_data)=="2019 [Note 2]"] <- "2019"
+
 #The code below adds [Note 2] to the year in the table - commented out
 
- names(table_3.3a_data)[names(table_3.3a_data) == "current_year"] <-
+names(table_3.3a_data)[names(table_3.3a_data) == "current_year"] <-
 #if (trust_body_var == "TrustElectedRep2") {
 #   paste0(current_year, " [Note 2]")
 #} else {
-   current_year
+current_year
 #}
 
 saveRDS(table_3.3a_data, paste0(data_folder, "Trend/", current_year, "/table_3.3a_data.RDS"))

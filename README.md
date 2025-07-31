@@ -38,8 +38,26 @@ Carry out the following updates each year to create new publication:
 
     -   QA the report and make any necessary changes in the Rmd document itself.
     -   Ensure that all automated text makes sense.
-
+    
 -   Knit updated `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY.Rmd` for final draft.
+
+-   Check and update question text in `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd`
+
+-   Knit `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-b.Rmd`.
+-   Knit `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd
+
+-   Make any necessary changes to 'background-quality-report.Rmd'
+
+-   Knit 'background-quality-report.Rmd'
+-   Knit 'Public Awareness of and Trust in Official Statistics Press Release.Rmd'
+
+-   Make any necessary changes to 'background-quality-report.Rmd' and knit updated code
+
+-   In the following files 'Select all' (ctrl+A) and Run. Before running, check for any edit instructions at the top.
+        - infographic charts.R
+        - significance_outputs.R
+        - exploratory_significance_testing.R
+        - PfG Table Output with sample numbers.R
 
 ## Onloading a new user
 

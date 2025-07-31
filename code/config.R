@@ -37,6 +37,8 @@ survey_end_mth <- "November"
 # Set to "TrustNIAssembly2" (name when Assembly is sitting)
 # or "TrustElectedRep2" (name when Assembly isn't sitting, eg 2019)
 trust_body_var <- "TrustNIAssembly2"
+# add current year to list, if an elected rep year
+elected_rep_years_text <- "2019 and 2023"
 
 # Weights used for current year for analysis by age, sex and all other co-vars
 age_weight <- "W1"

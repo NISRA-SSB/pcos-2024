@@ -317,26 +317,36 @@ f_worksheet(wb,
 
 # Note: If this is using the TrustElectedRep2 variable the "Note 2" text will automatically be applied to variable label.
 #       However, the "note" text below will need updated manually.
-#OTHER UPDATES to f_worksheet:
-#sheet_name = "Trust_NI_Assembly" OR sheet_name = "Trust_NIAssem_ElectBodies"
-#contents = "Trust in the Northern Ireland Assembly" OR contents = "Trust in the Northern Ireland Assembly/ Elected Bodies"
-#title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - The NI Assembly?"
-# OR title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - elected bodies such as the NI Assembly or UK Parliament?"
-#outlining = "outlining trust in the Northern Ireland Assembly." OR outlining = "outlining trust in the Northern Ireland Assembly, except for 2019 and 2023 when the question related to Elected Bodies"
 
-f_worksheet(wb,
-  sheet_name = "Trust_NIAssem_ElectBodies",
-  contents = "Trust in the Northern Ireland Assembly/ Elected Bodies",
-  title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - elected bodies such as the NI Assembly or UK Parliament?",
-  outlining = "outlining trust in the Northern Ireland Assembly, except for 2019 and 2023, when the question related to Elected Bodies",
-  tables = list(
-    list(
-      data = table_3.3a_data,
-      title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]"),
-      note = "Note 2: In 2019 and 2023, respondents were asked whether they trusted elected bodies such as the NI Assembly or UK Parliament, as the NI Assembly was suspended at this time."
+if (trust_body_var == "TrustNIAssembly2"){
+  f_worksheet(wb,
+    sheet_name = "Trust_NI_Assembly",
+    contents = "Trust in the Northern Ireland Assembly",
+    title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - The NI Assembly?",
+    outlining = "outlining trust in the Northern Ireland Assembly.",
+    tables = list(
+      list(
+        data = table_3.3a_data,
+        title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]"),
+        note = paste0("Note 2: In ", elected_rep_years_text, ", respondents were asked whether they trusted elected bodies such as the NI Assembly or UK Parliament, as the NI Assembly was suspended at this time.")
+      )
     )
   )
-)
+} else {
+  f_worksheet(wb,
+    sheet_name = "Trust_NIAssem_ElectBodies",
+    contents = "Trust in the Northern Ireland Assembly/ Elected Bodies",
+    title = "Qu 3.3: For each institution, please indicate whether you tend to trust it or tend not to trust it - elected bodies such as the NI Assembly or UK Parliament?",
+    outlining = paste0("outlining trust in the Northern Ireland Assembly, except for ", elected_rep_years_text, ", when the question related to Elected Bodies"),
+    tables = list(
+      list(
+        data = table_3.3a_data,
+        title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]"),
+        note = paste0("Note 2: In ", elected_rep_years_text, ", respondents were asked whether they trusted elected bodies such as the NI Assembly or UK Parliament, as the NI Assembly was suspended at this time.")
+      )
+    )
+  )
+}
 
 #only applied if using TrustElectedRep2 variable.
 

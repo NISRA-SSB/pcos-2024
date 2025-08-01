@@ -4,6 +4,16 @@
 library(here)
 source(paste0(here(), "/code/html_publication/data_prep.R"))
 
+#combine 'tend to' and 'greatly' columns in ons data
+data_ons <- data_ons %>%
+  mutate(
+    `Weighted base (ex DK)` = 100 - `Don't know`,
+    `Trust a great deal/Tend to trust` = `Trust a great deal` + `Tend to trust`,
+    `Tend to distrust/Distrust greatly` = `Tend to distrust` + `Distrust greatly`,
+    `Strongly Agree/Tend to Agree` = `Strongly agree` + `Tend to agree`,
+    `Tend to disagree/Strongly disagree` = `Tend to disagree` + `Strongly disagree`
+  )
+
 if (!dir.exists(paste0(here(), "/outputs/infographics"))) {
   dir.create(paste0(here(), "/outputs/infographics"))
 }

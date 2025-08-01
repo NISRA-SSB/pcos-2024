@@ -41,18 +41,19 @@ Carry out the following updates each year to create new publication:
     
 -   Knit updated `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY.Rmd` for final draft.
 
--   Check and update 'Trust in the Northern Ireland Assembly' or 'Trust in the Northern Ireland Assembly/ Elected Bodies' sub-heading in `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd`.
+-   Check and update 'Trust in the Northern Ireland Assembly' or 'Trust in the Northern Ireland Assembly/ Elected Bodies' sub-heading in `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-b.Rmd`.
 -   Knit `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-b.Rmd`.
 
 -   Check and update question text in `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd`.
 -   Knit `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd.
 
--   Make any necessary changes to 'background-quality-report.Rmd'.
-
 -   Knit 'background-quality-report.Rmd'.
--   Knit 'Public Awareness of and Trust in Official Statistics Press Release.Rmd'.
-
 -   Make any necessary changes to 'background-quality-report.Rmd' and knit updated code.
+
+-   Knit 'Public Awareness of and Trust in Official Statistics Press Release first draft.Rmd'.
+-   Knit 'Submission - Public Awareness of and Trust in Official Statistics first draft.Rmd'.
+
+-   the above two files are edited outside R, so do not need to be re-run
 
 -   In the following files 'Select all' (ctrl+A) and Run. Before running, check for any edit instructions at the top.
         - infographic charts.R

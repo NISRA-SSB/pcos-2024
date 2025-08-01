@@ -95,7 +95,7 @@ Detailed tables including the source data for all the charts and commentary and 
 
 * `r f_embed_ods_timeseries(df = table_3.2a_data, sheet_title = paste0("Table 3.2a: Trust in the Civil Service, 2014 to ", current_year), tab_name = "trust_nics", app_b = TRUE, startyear = 2014)`
 
-### Trust in the Northern Ireland Assembly/ Elected Bodies
+### Trust in the Northern Ireland Assembly
 
 * `r 
 
@@ -104,7 +104,7 @@ if (trust_body_var == "TrustElectedRep2") {sheet_name = "trust_assembly_elected_
 sheet_name = "trust_assembly"
 }
 
-f_embed_ods_timeseries(df = table_3.3a_data, sheet_title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]"), tab_name = sheet_name, note = "Note 2: In 2019 and 2023, respondents were asked whether they trusted elected bodies such as the NI Assembly or UK Parliament, as the NI Assembly was suspended at this time.", app_b = TRUE, startyear = 2014)`
+f_embed_ods_timeseries(df = table_3.3a_data, sheet_title = paste0("Table 3.3a: Trust in the Northern Ireland Assembly, 2014 to ", current_year, " [Note 2]"), tab_name = sheet_name, note = paste0("Note 2: In ", elected_rep_years_text, ", respondents were asked whether they trusted elected bodies such as the NI Assembly or UK Parliament, as the NI Assembly was suspended at this time."), app_b = TRUE, startyear = 2014)`
 
 ### Trust in the Media
 

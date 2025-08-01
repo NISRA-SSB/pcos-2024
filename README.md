@@ -45,7 +45,7 @@ Carry out the following updates each year to create new publication:
 -   Knit `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-b.Rmd`.
 
 -   Check and update question text in `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd`.
--   Knit `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd.
+-   Knit `public-awareness-of-and-trust-in-official-statistics-northern-ireland-YYYY-appendix-c.Rmd`.
 
 -   Knit 'background-quality-report.Rmd'.
 -   Make any necessary changes to 'background-quality-report.Rmd' and knit updated code.

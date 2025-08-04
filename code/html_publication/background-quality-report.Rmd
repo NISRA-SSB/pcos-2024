@@ -37,7 +37,7 @@ source(paste0(here(), "/code/html_publication/data_prep.R"))
 
 This report provides information on the quality of the data used to produce the official statistics: [Public Awareness of and Trust in Official Statistics, Northern Ireland](https://www.nisra.gov.uk/statistics/government/public-awareness-and-confidence-trust-official-statistics-pcos). It informs users about the quality of the information upon which they may be drawing conclusions and making decisions.
 
-The report is structured around the five quality dimensions for statistical outputs from the [https://ec.europa.eu/eurostat/web/quality/european-quality-standards/european-statistics-code-of-practice](https://ec.europa.eu/eurostat/web/quality/european-quality-standards/european-statistics-code-of-practice). The UK Statistics Authority’s [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/the-code/) requires that:
+The report is structured around the five quality dimensions for statistical outputs from the [European Statistics Code of Practice](https://ec.europa.eu/eurostat/web/quality/european-quality-standards/european-statistics-code-of-practice). The UK Statistics Authority’s [Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/the-code/) requires that:
 
 > __Q3.3__ _The quality of the statistics and data, including their accuracy and reliability, coherence and comparability, and timeliness and punctuality, should be monitored and reported regularly._
 
@@ -77,7 +77,7 @@ The Code explicitly states that “Those producing and releasing statistics shou
 
 Comparisons are made with other institutions (the Civil Service, the media and the NI Assembly) and the Office for National Statistics (ONS), the largest producer of UK statistics, where there are appropriate data to do so.
 
-A core set of questions have been included in each survey (since 2014) allowing trends to be monitored over time. Questions have been aligned with the equivalent survey carried out by the Office of National Statistics ([Public Confidence in Official Statistics])(https://natcen.ac.uk/publications/public-confidence-official-statistics) and the OECD Committee for Statistics recommendations on [Measuring Trust in Official Statistics](https://web-archive.oecd.org/2012-06-14/58409-modelsurveyquestionnaireonmeasuringtrustinofficialstatistics.htm).
+A core set of questions have been included in each survey (since 2014) allowing trends to be monitored over time. Questions have been aligned with the equivalent survey carried out by the Office of National Statistics [(Public Confidence in Official Statistics)](https://natcen.ac.uk/publications/public-confidence-official-statistics) and the OECD Committee for Statistics recommendations on [Measuring Trust in Official Statistics](https://web-archive.oecd.org/2012-06-14/58409-modelsurveyquestionnaireonmeasuringtrustinofficialstatistics.htm).
 
 Consultation is carried out prior to each run of the survey with key users to agree the questions to be included and to ensure they continue to cover the main requirements for users.
 

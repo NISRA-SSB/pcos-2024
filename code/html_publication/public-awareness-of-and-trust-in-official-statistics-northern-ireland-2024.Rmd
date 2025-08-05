@@ -602,7 +602,7 @@ f_embed_ods(df = table_6b_data,
 
 ### Current year, `r current_year`
 
-Eighty-five percent of respondents (`r agree_confidential`%) agree that personal information provided to NISRA will be kept confidential while (`r disagree_confidential`%) disagree. The remaining respondents 'don’t know' (`r dont_know_confidential`%) (Chart 14).
+Eighty-five percent of respondents (`r agree_confidential`%) agree that personal information provided to NISRA will be kept confidential while `r disagree_confidential`% disagree. The remaining respondents 'don’t know' (`r dont_know_confidential`%) (Chart 14).
 
 ### Comparison over time
 

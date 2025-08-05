@@ -121,7 +121,7 @@ How much do you trust the Civil Service?
 1. Tend to distrust
 1. Distrust greatly
 
-#### Qu 3a: Trust elected bodies
+#### Qu 3a: Trust NI Assembly
 
 How much do you trust the NI Assembly?
 

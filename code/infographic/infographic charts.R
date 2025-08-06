@@ -778,8 +778,9 @@ caption_1 <- ggplot() +
   annotate("text",
     x = 0,
     y = 0,
-    label = bquote(bold("Awareness of NISRA") ~ is ~ bold(.(current_trend)) ~ "from 2020 - 2023 but"),
-    color = "#747474",
+    #label = bquote(bold("Awareness of NISRA") ~ is ~ bold(.(current_trend)) ~ "from 2020 - 2023 but"),
+    label = bquote(bold("Awareness of NISRA") ~ has ~ bold(.("decreased")) ~ "since 2020 but"), 
+     color = "#747474",
     size = 3
   ) +
   coord_cartesian(clip = "off") +
@@ -790,7 +791,7 @@ caption_2 <- ggplot() +
     x = 0,
     y = 0,
   #  label = bquote(bold(.(previous_trend)) ~ "than in previous years."),
-  label = bquote(bold(.(previous_trend)) ~ "than in 2019 and earlier years"),
+  label = bquote(remains~bold(.(previous_trend))~ "than in 2019 and earlier years"),
     color = "#747474",
     size = 3
   ) +

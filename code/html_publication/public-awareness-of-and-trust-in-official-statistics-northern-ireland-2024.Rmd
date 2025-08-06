@@ -284,7 +284,7 @@ f_extract_sheet(path = xl_filename,
 
 Respondents who had heard of NISRA were asked whether they were aware that NISRA produced certain statistics. Of these respondents, `r heard_aware_all`% were aware that NISRA produced all the listed statistics while `r heard_aware_none`% were unaware that NISRA produced any of the listed statistics. A more detailed breakdown is available in the accompanying tables (see [Appendix B](public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`-appendix-b.html)).
 
-Awareness was highest for the Northern Ireland Census (`r heard_aware_census`%), followed by statistics on the number of people who live in Northern Ireland (`r heard_aware_people`%), and the unemployment rate (`r heard_aware_unemployment`%). Statistics on  the percentage of journeys made by walking, cycling or public transport (`r heard_of_aware_cycling`%) were the least recognised as being produced by NISRA.
+Awareness was highest for the Northern Ireland Census (`r heard_aware_census`%), followed by statistics on the number of people who live in Northern Ireland (`r heard_aware_people`%), and the unemployment rate (`r heard_aware_unemployment`%). Statistics on  the percentage of journeys made by walking, cycling or public transport (`r heard_of_aware_cycling`%) were the least recognised as being produced by NISRA (Chart 4).
 
 #### Chart 4: Aware NISRA produces specific statistics for respondents who were aware of NISRA, `r current_year`
 

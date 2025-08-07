@@ -531,7 +531,7 @@ trust_chart_3 <- ggplot(
     size = 0
   ) +
   labs(
-    title = bquote("The belief that" ~ bold("NISRA") ~ "statistics are free from political"),
+    title = bquote("The belief that NISRA statistics are free from political"),
     #subtitle = bquote("interference" ~ bold("remains high") ~ "at" ~ bold(.(chart_3_perc)))
     subtitle = bquote("interference" ~ bold("remains high at") ~ bold(.(chart_3_perc)))
   ) +
@@ -779,9 +779,12 @@ caption_1 <- ggplot() +
   annotate("text",
     x = 0,
     y = 0,
+    
+    #ORIGINAL
     #label = bquote(bold("Awareness of NISRA") ~ is ~ bold(.(current_trend)) ~ "from 2020 - 2023 but"),
-    label = bquote("Awareness of NISRA" ~ has ~ bold(.("decreased since 2020")) ~ "but"), 
-    #label = bquote(bold("Awareness of NISRA") ~ has ~ bold(.("decreased since 2020")) ~ "but"), 
+    #2024 EDIT 
+    label = bquote("Awareness of NISRA" ~ has ~ bold(.("decreased since 2020")) ~ "but"),
+
      color = "#747474",
     size = 3
   ) +
@@ -792,9 +795,12 @@ caption_2 <- ggplot() +
   annotate("text",
     x = 0,
     y = 0,
-  #  label = bquote(bold(.(previous_trend)) ~ "than in previous years."),
-  label = bquote(remains(.(previous_trend))~ "than in 2019 and earlier years."),
-  #label = bquote(remains ~ bold(.(previous_trend))~ bold("than in 2019 and earlier years.")),
+    
+  #ORIGINAL
+  # label = bquote(bold(.(previous_trend)) ~ "than in previous years."),
+  #2024 EDIT
+  label = bquote(remains ~ bold(.(previous_trend))~ "than in 2019 and earlier years."),
+
     color = "#747474",
     size = 3
   ) +

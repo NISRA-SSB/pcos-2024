@@ -392,7 +392,7 @@ writeLines(infographic_template, paste0(here(), "/outputs/Overview Infographic -
 
 rsvg_pdf(
   svg = paste0(here(), "/outputs/Overview Infographic - ", current_year, ".svg"),
-  file = paste0(here(), "/outputs/Overview Infographic - ", current_year, ".pdf")
+  file = paste0(here(), "/outputs/NOT USED Overview Infographic - ", current_year, ".pdf")
 )
 
 unlink(paste0(here(), "/outputs/Overview Infographic - ", current_year, ".svg"))

@@ -7,7 +7,7 @@
    width="1122.5601"
    height="793.76001"
    viewBox="0 0 1122.5601 793.76001"
-   sodipodi:docname="Awareness - Infographic Template.svg"
+   sodipodi:docname="Awareness - Infographic Template 3.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -1802,9 +1802,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="375.4737"
-     inkscape:cy="437.6991"
+     inkscape:zoom="22.627417"
+     inkscape:cx="310.61875"
+     inkscape:cy="772.80142"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="2391"
@@ -2110,13 +2110,17 @@
      transform="translate(139,1)">
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;inline-size:894.498;display:inline;fill:#666666"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;inline-size:894.498;display:inline;fill:#2574a9"
        x="173"
        y="763"
        id="text9"
        transform="translate(40,19)"><tspan
          x="173"
          y="763"
-         id="tspan3">https://www.nisra.gov.uk/statistics/government/public-awareness-and-confidence-trust-official-statistics-pcos</tspan></text>
+         id="tspan2">https://www.nisra.gov.uk/statistics/government/public-awareness-and-confidence-trust-official-statistics-pcos</tspan></text>
+    <path
+       style="fill:#2574a9;stroke:#2574a9;stroke-width:0.997542;stroke-miterlimit:3.5"
+       d="m 213.2929,784.20665 c 762.2386,-0.002 762.2386,-0.002 762.2386,-0.002"
+       id="path4-6" />
   </a>
 </svg>

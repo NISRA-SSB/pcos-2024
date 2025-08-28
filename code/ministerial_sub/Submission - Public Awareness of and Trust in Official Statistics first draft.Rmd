@@ -123,7 +123,7 @@ ii. the publication of the Statistics Bulletin.
 :::
 
 :::{custom-style="numbered_point"}
-In 2008 the Statistics Authority was set up as a non-Ministerial government department with a remit to improve public confidence and trust in official statistics. In 2009, questions relating to Public Awareness of and Trust in Official Statistics were placed in the Northern Ireland Omnibus Survey. These questions were repeated in even years from 2010 to 2016, and have been asked annually in the Continuous Household Survey (CHS) since 2019, with awareness of NISRA asked in 2018.
+In 2008 the Statistics Authority was set up as a non-Ministerial government department with a remit to improve public confidence and trust in official statistics. In 2009, questions relating to Public Awareness of and Trust in Official Statistics were placed in the Northern Ireland Omnibus Survey. The questions were repeated in even years from 2010 to 2016, and have been asked annually in the Continuous Household Survey (CHS) since 2019, with awareness of NISRA asked in 2018.
 :::
 
 :::{custom-style="numbered_point"}
@@ -157,7 +157,7 @@ The `r current_year` survey questions were asked in the CHS between `r survey_st
 The key findings from the statistics bulletin [`r f_format_link(paste0("Public Awareness of and Trust in Official Statistics Northern Ireland ", current_year))`](https://datavis.nisra.gov.uk/ssb/public-awareness-of-and-trust-in-official-statistics-northern-ireland-`r current_year`.html) are outlined below. 
 :::
 :::{custom-style="indent_text"}
-Detailed tables accompany the report and include the statistics underlying the charts and commentary as well as further breakdowns. Infographics are also available on ‘`r f_red_text("Public Awareness of NISRA")`’ and ‘`r f_red_text("Public Trust in Official Statistics")`’:
+Detailed tables accompany the report and include the statistics underlying the charts and commentary as well as further breakdowns. Infographics on ‘`r f_red_text("Public Awareness of NISRA")`’ and ‘`r f_red_text("Public Trust in Official Statistics")`’ are also available:
 :::
 :::{custom-style="link_style"}
 [`r f_format_link(paste0("https://www.nisra.gov.uk/publications/public-awareness-and-trust-official-statistics-",current_year))`](https://www.nisra.gov.uk/publications/public-awareness-and-trust-official-statistics-`r current_year`)
@@ -199,7 +199,7 @@ Public trust in the statistics produced by NISRA is `r f_red_text("also high")` 
 :::
 
 :::{custom-style="numbered_point"}
-For respondents who gave an opinion, there was `r f_red_text("no significant difference")` in the level of trust in NISRA statistics between `r current_year - 1` and `r current_year` However for these respondents, trust in NISRA statistics is `r f_red_text("higher in 2022 compared to 2019 and previous years.")`
+For respondents who gave an opinion, there was `r f_red_text("no significant difference")` in the level of trust in NISRA statistics between `r current_year - 1` and `r current_year`. However for these respondents, trust in NISRA statistics is `r f_red_text("higher in 2022 compared to 2019 and previous years.")`
 :::
 
 :::{custom-style="numbered_point"}

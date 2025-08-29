@@ -95,7 +95,7 @@ The sample for the survey consists of a systematic random sample of approximatel
 
 ### Response Rate
 
-The target response rate for the CHS is 55%. That is, obtaining interviews at 55% of eligible addresses. Addresses which are vacant, derelict etc. and which do not contain people are deemed to be ineligible. The achieved response rate in the 2024/25 CHS was 46%. Of the 2,340 addresses selected for interview from `r survey_start_mth` to `r survey_end_mth` `r current_year`, `r sample_size` persons participated in this module of the survey.
+The target response rate for the CHS is 50%-55%. That is, obtaining interviews at 50%-55% of eligible addresses. Addresses which are vacant, derelict etc. and which do not contain people are deemed to be ineligible. The achieved response rate in the 2024/25 CHS was 46%. Of the 2,340 addresses selected for interview from `r survey_start_mth` to `r survey_end_mth` `r current_year`, `r sample_size` persons participated in this module of the survey.
 
 ### CHS data collection and processing
 

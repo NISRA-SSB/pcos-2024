@@ -1,4 +1,6 @@
 #edit 'covariates to include' as appropriate, and add/remove 'Reword value labels' as appropriate
+# NEED TO DECIDE WHAT GROUPS WE ARE OUTPUTTING AS WE CURRENTLY HAVE TWO MARITAL STATUS
+
 
 library(here)
 source(paste0(here(), "/code/config.R"))
@@ -9,7 +11,7 @@ if (!dir.exists(paste0(here(), "/outputs/PfG"))) {
   dir.create(paste0(here(), "/outputs/PfG"))
 }
 
-wb <- createWorkbook()
+wb <- createWorkbook() 
 
 # Define all available years based on current_year value from config ####
 data_years <- c(seq(2012, 2018, 2), 2019:current_year)
@@ -18,7 +20,7 @@ data_years <- c(seq(2012, 2018, 2), 2019:current_year)
 questions <- c("TrustMedia2", "TrustAssemblyElectedBody2")
 
 # Co-variates to include ####
-co_vars <- c("LGD2014name", "URBH", "SEX", "AGE2","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_white_other")
+co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "Sexual_Orient", "Deprivation")
 
 # Lookup table for EQUALGROUPS labels (taken from PfG documentation) ####
 eq_labels <- read.xlsx(
@@ -132,7 +134,7 @@ for (question in questions) {
           EQUALGROUPS = "N92000002",
           `Variable name` = "Northern Ireland",
           VALUE = ni_n
-        )  
+        )
 
       ### Append this row to question_data data frame ####
 
@@ -196,20 +198,30 @@ for (question in questions) {
               ))
           }
           
+          if (var == "MS") {
+            #### Reword value labels - marital status####
+            pfg_data_year <- pfg_data_year %>%
+              mutate(MS = factor(MS,
+                                   levels = c("Single", "Married/CP", "Separated", "Divorced/Dissolved CP", "Widowed/Surviving CP"),
+                                   labels = c("Marital status - Single", "Marital status - Married/Civil partnership", "Marital status - Separated", "Marital status - Divorced", "Marital status - Widowed")
+              ))
+          }
+          
           if (var == "MS_GRP") {
             #### Reword value labels - marital status group ####
             pfg_data_year <- pfg_data_year %>%
               mutate(MS_GRP = factor(MS_GRP,
-                                   levels = c("Single", "Married/CP", "Other"),
-                                   labels = c("Marital status - Single", "Marital status - Married/Civil partnership", "Marital status - Other")
+                                     levels = c("Single", "Married/CP", "Other"),
+                                     labels = c("Marital status Group - Single", "Marital status Group - Married/Civil partnership", "Marital status Group - Other")
               ))
+            
           }
 
           if (var == "Ethnic_white_other") {
             #### Reword value labels - ethnic group ####
             pfg_data_year <- pfg_data_year %>%
               mutate(Ethnic_white_other = factor(Ethnic_white_other,
-                                     levels = c("White", "not White"),
+                                     levels = c("White", "Other"),
                                      labels = c("Ethnic group - White", "Ethnic group - Other")
               ))
           }
@@ -222,6 +234,32 @@ for (question in questions) {
                                                  labels = c("Disability - Yes", "Disability - No")
               ))
           }
+          
+          if (var == "Dependants") {
+            #### Reword value labels - dependants ####
+            pfg_data_year <- pfg_data_year %>%
+              mutate(Dependants = factor(Dependants,
+                                           levels = c("Has dependants", "Does not have dependants"),
+                                           labels = c("Dependants - With dependants (overall)", "Dependants - Without dependants")
+              ))
+          }
+          
+          if (var == "Sexual_orient") {
+            #### Reword value labels - sexual orientation ####
+            pfg_data_year <- pfg_data_year %>%
+              mutate(Sexual_orient = factor(Sexual_orient,
+                                  levels = c("Heterosexual or straight", "Gay, lesbian, bisexual and other"),
+              ))
+          }
+          
+          if (var == "Deprivation") {
+            #### Reword value labels - deprivation ####
+            pfg_data_year <- pfg_data_year %>%
+             mutate(Deprivation = factor(Deprivation,
+                                         levels = c("Quintile 1 - Most deprived", "Quintile 2", "Quintile 3", "Quintile 4", "Quintile 5 - Least deprived"),
+                                          labels = c("Deprivation - Quintile 1 - Most deprived", "Deprivation - Quintile 2", "Deprivation - Quintile 3", "Deprivation - Quintile 4", "Deprivation - Quintile 5 - Least deprived"),
+             ))
+        }
           
           #### Values to loop through ####
 
@@ -293,9 +331,7 @@ for (question in questions) {
   sort_order <- c("Northern Ireland")
   
   for (var in co_vars) {
-    
     sort_order <- c(sort_order, levels(pfg_data_year[[var]]))
-    
   }
 
   question_data <- question_data %>%

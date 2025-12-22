@@ -36,17 +36,21 @@ if ("OwnRelig2" %in% names(sup_data)) {
 }
 
 ## Select co-variates ####
-if (sup_year %in% c(2021:current_year)) {
-  sup_covar <- c("LGD2014name", "URBH", "SEX", "AGE2","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other")}
+
+if (sup_year %in% c(2022:current_year)) {
+  sup_covar <- c("LGD2014name", "AsmblyArea", "URBH", "Deprivation", "SEX", "AGE2", "MS", "MS_GRP", "OwnRelig2", "LimLongStand", "ETHNIC", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3", "Sexual_orient")}
+
+if (sup_year %in% c(2021)) {
+  sup_covar <- c("LGD2014name", "AsmblyArea", "URBH", "Deprivation", "SEX", "AGE2", "MS", "MS_GRP", "OwnRelig2", "LimLongStand", "ETHNIC", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3")}
 
 if (sup_year %in% c(2020)) {
-  sup_covar <- c("LGD2014name", "URBH", "SEX", "AGE2","MS_GRP", "OwnRelig2", "Ethnic_group", "Ethnic_white_other")}
+  sup_covar <- c("LGD2014name", "AsmblyArea", "URBH", "Deprivation", "SEX", "AGE2", "MS", "MS_GRP", "OwnRelig2", "ETHNIC", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3")}
 
 if (sup_year %in% c(2019)) {
-  sup_covar <- c("SEX", "AGE2","MS_GRP", "OwnRelig2", "LimLongStand")}
+  sup_covar <- c("LGD2014name","AsmblyArea", "URBH", "Deprivation", "SEX", "AGE2","MS", "MS_GRP", "OwnRelig2", "LimLongStand", "ETHNIC", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3", "Sexual_orient")}
 
 if (sup_year %in% c(2014,2016)) {
-  sup_covar <- c("SEX", "AGE2","MS_GRP", "LimLongStand")}
+  sup_covar <- c("LGD2014name","AsmblyArea", "SEX", "AGE2", "MS", "MS_GRP", "LimLongStand", "ETHNIC", "Ethnic_group", "Ethnic_white_other", "Dependants", "Sexual_orient")}
 
 ## Set age_weight ####
 

@@ -530,7 +530,7 @@ for (year in c(seq(2014, 2016, 2), 2019:current_year)) {
   ### Sexual Orientation (SIDtel & SIDFTFQN) ####
   # recode SIDtel and SIDFTFQN for 2019 onwards; sexident in 2014 & 2016 data; and for 2020/2021 query to be resolved
   
-  if (year %in% c(2023, 2024)) {
+  if (year %in% c(2023:current_year)) {
     data_year <- data_year %>%
       mutate(  
         Sexual_orient = as.factor(case_when(

@@ -5,7 +5,11 @@ library(here)
 source(paste0(here(), "/code/config.R"))
 
 # Define years to analyse based on current_year value from config (and assign to global environment) ####
+
+#SELECT FIRST LINE FOR ALL YEARS; SECOND LINE FOR CURRENT YEAR ONLY - OR EDIT FOR SELECTED SINGLE YEAR
+
 data_years <<- c(seq(2014, 2016, 2), 2019:current_year)
+#data_years <<- c(current_year)
 
 source(paste0(here(), "/code/pfg_tables/pfg_significance_testing/significance_testing_PfG.R"))
 

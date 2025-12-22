@@ -7,7 +7,7 @@ if (!dir.exists(paste0(here(), "/outputs/PfG"))) {
   dir.create(paste0(here(), "/outputs/PfG"))
 }
 
-# Set year range #### 
+# SET YEAR RANGE - ALL YEARS OR CURRENT YEAR #### 
 # by uncommenting first or second 'for' below
   # use first option to run complete time series
   # use second option if no changes from previous year

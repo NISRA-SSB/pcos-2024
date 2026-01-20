@@ -68,12 +68,15 @@ New users will require the following software from the ITAssist Store (icon on y
 -   R version 4.4
 -   RStudio
 -   Inkscape
-
-New users will also need a service request submitted to have the following software installed:
-
--   [Git for Windows](https://git-scm.com/download/win)
+-   GIT 
 
 New users need to create an account on [github.com](http://github.com) using their NISRA email address. The admin for the SSB Github Organisation will need to add the new account to the organisation.
+
+New users will also need a service request submitted to get access to the SSB folder on the shared drive:
+
+DFP_NISRA_Corporate Services (\\Pr-clus-vfpdfp)
+
+The permission for SSB staff to have access to this drive is included in CM Document FI1/25/824288
 
 ### Git
 

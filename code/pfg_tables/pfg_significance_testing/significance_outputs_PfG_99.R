@@ -786,7 +786,7 @@ saveWorkbook(wb,
              paste0(here(), "/outputs/PfG/significance outputs/significance output 99 NI assembly ",year, ".xlsx"),
              overwrite = TRUE
 )
-openXL(paste0(here(), "/outputs/PfG/significance outputs/significance output NI 99 assembly ",year, ".xlsx"))
+openXL(paste0(here(), "/outputs/PfG/significance outputs/significance output 99 NI assembly ",year, ".xlsx"))
 
 }
 

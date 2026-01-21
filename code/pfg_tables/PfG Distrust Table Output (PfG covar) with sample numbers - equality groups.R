@@ -20,7 +20,7 @@ data_years <- c(seq(2012, 2018, 2), 2019:current_year)
 questions <- c("TrustMedia2", "TrustAssemblyElectedBody2")
 
 # Co-variates to include ####
-co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "Sexual_Orient", "Deprivation")
+co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "Sexual_orient", "Deprivation")
 
 # Lookup table for EQUALGROUPS labels (taken from PfG documentation) ####
 eq_labels <- read.xlsx(
@@ -248,7 +248,8 @@ for (question in questions) {
             #### Reword value labels - sexual orientation ####
             pfg_data_year <- pfg_data_year %>%
               mutate(Sexual_orient = factor(Sexual_orient,
-                                  levels = c("Heterosexual or straight", "Gay, lesbian, bisexual and other"),
+                                            levels = c("Heterosexual or Straight", "Gay, Lesbian, bisexual or other sexual orientation"),
+                                            labels = c("Heterosexual or straight", "Gay, lesbian, bisexual and other")
               ))
           }
           

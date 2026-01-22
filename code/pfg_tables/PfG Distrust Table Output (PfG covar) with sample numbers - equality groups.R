@@ -19,8 +19,9 @@ data_years <- c(seq(2012, 2018, 2), 2019:current_year)
 # Questions to analyse ####
 questions <- c("TrustMedia2", "TrustAssemblyElectedBody2")
 
-# Co-variates to include ####
-co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "Sexual_orient", "Deprivation")
+# Co-variates to include (edit second line) ####
+#co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3", "Sexual_orient", "Deprivation")
+co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3", "Sexual_orient", "Deprivation")
 
 # Lookup table for EQUALGROUPS labels (taken from PfG documentation) ####
 eq_labels <- read.xlsx(
@@ -241,6 +242,33 @@ for (question in questions) {
               mutate(Dependants = factor(Dependants,
                                            levels = c("Has dependants", "Does not have dependants"),
                                            labels = c("Dependants - With dependants (overall)", "Dependants - Without dependants")
+              ))
+          }
+          
+          if (var == "DEPEND1") {
+            #### Reword value labels - child dependants ####
+            pfg_data_year <- pfg_data_year %>%
+              mutate(DEPEND1 = factor(DEPEND1,
+                                         levels = c("Has dependants", "Does not have dependants"),
+                                         labels = c("Dependants - With child dependants", "Dependants - Without child dependants")
+              ))
+          }
+          
+          if (var == "DEPEND2") {
+            #### Reword value labels - disabled dependants ####
+            pfg_data_year <- pfg_data_year %>%
+              mutate(DEPEND2 = factor(DEPEND2,
+                                         levels = c("Has dependants", "Does not have dependants"),
+                                         labels = c("Dependants - With disabled dependants", "Dependants - Without disabled dependants")
+              ))
+          }
+          
+          if (var == "DEPEND3") {
+            #### Reword value labels - elderly dependants ####
+            pfg_data_year <- pfg_data_year %>%
+              mutate(DEPEND3 = factor(DEPEND3,
+                                         levels = c("Has dependants", "Does not have dependants"),
+                                         labels = c("Dependants - With elderly dependants", "Dependants - Without elderly dependants")
               ))
           }
           

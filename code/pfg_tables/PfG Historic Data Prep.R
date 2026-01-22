@@ -229,7 +229,29 @@ for (year in c(seq(2014, 2016, 2), 2019:current_year)) {
   ### Marital/Civil Partnership status (MARSTT) ####
   # recode
   
-  if ("MARSTT" %in% names(data_year) & !year %in% c(2019,2024)) {
+  if ("MARSTT" %in% names(data_year) & !year %in% c(2019,2021:2024)) {
+    data_year <- data_year %>%
+      mutate(  
+        MS = as.factor(case_when(
+          MARSTT %in% c("Single, that is, never married and never registered in a civil partnership") ~ "Single",
+          MARSTT %in% c("Married", "In a registered civil partnership") ~ "Married/CP",
+          MARSTT %in% c("Separated, but still legally married", "Separated, but still legally in a civil partnership") ~ "Separated",
+          MARSTT %in% c("Divorced", "Formerly in a civil partnership which is now legally dissolved") ~ "Divorced/Dissolved CP",
+          MARSTT %in% c("Widowed", "Surviving partner from a civil partnership") ~ "Widowed/Surviving CP")
+        ),
+        MS = factor(MS,levels=c("Single", "Married/CP", "Separated", "Divorced/Dissolved CP","Widowed/Surviving CP")),
+        MS_GRP = as.factor(case_when(
+          MARSTT %in% c("Single, that is, never married and never registered in a civil partnership") ~ "Single",
+          MARSTT %in% c("Married", "In a registered civil partnership") ~ "Married/CP",
+          MARSTT %in% c("Separated, but still legally married", "Separated, but still legally in a civil partnership", 
+                        "Divorced", "Formerly in a civil partnership which is now legally dissolved",
+                        "Widowed", "Surviving partner from a civil partnership") ~ "Other")
+        ),
+        MS_GRP = factor(MS_GRP,levels=c("Single", "Married/CP", "Other" ))
+      )
+  }
+  
+  if ("MARSTT" %in% names(data_year) & year %in% c(2021,2022,2023)) {
     data_year <- data_year %>%
       mutate(  
         MS = as.factor(case_when(

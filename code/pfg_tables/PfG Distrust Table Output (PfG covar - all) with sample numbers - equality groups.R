@@ -19,8 +19,7 @@ data_years <- c(seq(2012, 2018, 2), 2019:current_year)
 # Questions to analyse ####
 questions <- c("TrustMedia2", "TrustAssemblyElectedBody2")
 
-# Co-variates to include (edit second line) ####
-#co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3", "Sexual_orient", "Deprivation")
+# Co-variates to include ####
 co_vars <- c("URBH", "SEX", "AGE2","MS","MS_GRP", "OwnRelig2", "LimLongStand", "Ethnic_group", "Ethnic_white_other", "Dependants", "DEPEND1", "DEPEND2", "DEPEND3", "Sexual_orient", "Deprivation")
 
 # Lookup table for EQUALGROUPS labels (taken from PfG documentation) ####
@@ -449,7 +448,7 @@ for (question in questions) {
   
 }
 
-xl_filename <- paste0(here(), "/outputs/PfG/PfG - Distrust Equality Groups Data (pfg covariates) with sample numbers ", current_year, ".xlsx")
+xl_filename <- paste0(here(), "/outputs/PfG/PfG - Distrust Equality Groups Data (pfg covariates) with sample numbers (all covar) ", current_year, ".xlsx")
 
 saveWorkbook(wb, xl_filename, overwrite = TRUE)
 
